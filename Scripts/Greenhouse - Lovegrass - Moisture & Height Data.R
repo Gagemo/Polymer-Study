@@ -71,22 +71,39 @@ y_labels <- c(
   "Height.Difference" = "Height Difference (cm)"
 )
 
-# Function to create boxplots and annotate significance and test type
 create_boxplot <- function(metric, p_value, test_used, y_label) {
-  plot <- ggplot(data, aes(x=Treatment, y=!!sym(metric), fill=Treatment)) +
+  plot <- ggplot(data, aes(x = Treatment, y = !!sym(metric), fill = Treatment)) +
     geom_boxplot() +
     scale_fill_manual(values = c("lightblue", "#FFA07A")) +
-    theme_classic() +
+    theme_classic(base_size = 12) +
     labs(x = NULL, y = y_labels[[metric]]) +
-    theme(legend.position = "none",
-          panel.background = element_rect(fill = "transparent", color = NA),
-          plot.background = element_rect(fill = "transparent", color = NA)) +
-    coord_cartesian(ylim = c(NA, max(data[[metric]], na.rm=TRUE) * 1.1)) + # Adjust y-axis limits
-    annotate("text", x=1.5, y=max(data[[metric]], na.rm=TRUE) * 1, 
-             label=paste0(test_used, "\np = ", round(p_value, 3)), size=4)
+    theme(
+      legend.position = "none",
+      panel.background = element_rect(fill = "transparent", color = NA),
+      plot.background = element_rect(fill = "transparent", color = NA),
+      axis.text.x = element_text(size = 12 * 2, color = "black"), # Black x-axis ticks
+      axis.text.y = element_text(size = 12 * 2, color = "black"), # Black y-axis ticks
+      axis.title.x = element_text(size = 12 * 2, color = "black"), # Black x-axis label
+      axis.title.y = element_text(size = 12 * 2, color = "black") # Black y-axis label
+    ) +
+    coord_cartesian(ylim = c(NA, max(data[[metric]], na.rm = TRUE) * 1.1)) +
+    annotate(
+      "text",
+      x = 1.5,
+      y = max(data[[metric]], na.rm = TRUE) * 1,
+      label = paste0(test_used, "\np = ", round(p_value, 3)),
+      size = 4
+    )
   
-  # Save plot
-  ggsave(filename = paste0("Figures/boxplot_", metric, ".jpg"), plot = plot, width = 6, height = 4, dpi = 300)
+  # Save plot as PNG for transparency
+  ggsave(
+    filename = paste0("Figures/boxplot_", metric, ".png"),
+    plot = plot,
+    width = 6,
+    height = 4,
+    dpi = 300,
+    bg = "transparent"
+  )
   
   return(plot)
 }
