@@ -1,541 +1,541 @@
 Year,Site,Plot,Polymer,Species,Height
 0,Site 1,Plot 1,No,G,22.5
-0,Site 1,Plot 1,No,M,59.5
 0,Site 1,Plot 1,No,G,20
-0,Site 1,Plot 1,No,M,26.5
 0,Site 1,Plot 1,No,G,37
-0,Site 1,Plot 1,No,M,32.5
 0,Site 1,Plot 1,No,G,48.5
-0,Site 1,Plot 1,No,M,20.5
 0,Site 1,Plot 1,No,G,40.5
+0,Site 1,Plot 3,No,G,44.5
+0,Site 1,Plot 3,No,G,49.5
+0,Site 1,Plot 3,No,G,50.5
+0,Site 1,Plot 3,No,G,48.5
+0,Site 1,Plot 3,No,G,53.5
+0,Site 1,Plot 5,No,G,51.5
+0,Site 1,Plot 5,No,G,50.5
+0,Site 1,Plot 5,No,G,54.5
+0,Site 1,Plot 5,No,G,49
+0,Site 1,Plot 5,No,G,51.5
+0,Site 1,Plot 1,No,M,59.5
+0,Site 1,Plot 1,No,M,26.5
+0,Site 1,Plot 1,No,M,32.5
+0,Site 1,Plot 1,No,M,20.5
 0,Site 1,Plot 1,No,M,28.5
-0,Site 1,Plot 2,Yes,M,19.5
+0,Site 1,Plot 3,No,M,24.5
+0,Site 1,Plot 3,No,M,18.5
+0,Site 1,Plot 3,No,M,24.5
+0,Site 1,Plot 3,No,M,20.5
+0,Site 1,Plot 3,No,M,20.5
+0,Site 1,Plot 5,No,M,24
+0,Site 1,Plot 5,No,M,24
+0,Site 1,Plot 5,No,M,15.5
+0,Site 1,Plot 5,No,M,18
+0,Site 1,Plot 5,No,M,15.5
 0,Site 1,Plot 2,Yes,G,51.5
-0,Site 1,Plot 2,Yes,M,23
 0,Site 1,Plot 2,Yes,G,54.5
 0,Site 1,Plot 2,Yes,G,43.5
-0,Site 1,Plot 2,Yes,M,16.5
 0,Site 1,Plot 2,Yes,G,31.5
-0,Site 1,Plot 2,Yes,M,20.5
 0,Site 1,Plot 2,Yes,G,49.5
-0,Site 1,Plot 2,Yes,M,22.5
-0,Site 1,Plot 3,No,M,24.5
-0,Site 1,Plot 3,No,G,44.5
-0,Site 1,Plot 3,No,M,18.5
-0,Site 1,Plot 3,No,G,49.5
-0,Site 1,Plot 3,No,M,24.5
-0,Site 1,Plot 3,No,G,50.5
-0,Site 1,Plot 3,No,M,20.5
-0,Site 1,Plot 3,No,G,48.5
-0,Site 1,Plot 3,No,M,20.5
-0,Site 1,Plot 3,No,G,53.5
-0,Site 1,Plot 4,Yes,M,23.5
 0,Site 1,Plot 4,Yes,G,46.5
-0,Site 1,Plot 4,Yes,M,23.5
 0,Site 1,Plot 4,Yes,G,50.5
-0,Site 1,Plot 4,Yes,M,24.5
 0,Site 1,Plot 4,Yes,G,53.5
-0,Site 1,Plot 4,Yes,M,15.5
 0,Site 1,Plot 4,Yes,G,41.5
-0,Site 1,Plot 4,Yes,M,23
 0,Site 1,Plot 4,Yes,G,49.5
-0,Site 1,Plot 5,No,G,51.5
-0,Site 1,Plot 5,No,M,24
-0,Site 1,Plot 5,No,G,50.5
-0,Site 1,Plot 5,No,M,24
-0,Site 1,Plot 5,No,G,54.5
-0,Site 1,Plot 5,No,M,15.5
-0,Site 1,Plot 5,No,G,49
-0,Site 1,Plot 5,No,M,18
-0,Site 1,Plot 5,No,G,51.5
-0,Site 1,Plot 5,No,M,15.5
 0,Site 1,Plot 6,Yes,G,55.5
-0,Site 1,Plot 6,Yes,M,26.5
 0,Site 1,Plot 6,Yes,G,49.5
-0,Site 1,Plot 6,Yes,M,18.5
 0,Site 1,Plot 6,Yes,G,44.5
-0,Site 1,Plot 6,Yes,M,31
 0,Site 1,Plot 6,Yes,G,52.5
-0,Site 1,Plot 6,Yes,M,24
 0,Site 1,Plot 6,Yes,G,46
+0,Site 1,Plot 2,Yes,M,19.5
+0,Site 1,Plot 2,Yes,M,23
+0,Site 1,Plot 2,Yes,M,16.5
+0,Site 1,Plot 2,Yes,M,20.5
+0,Site 1,Plot 2,Yes,M,22.5
+0,Site 1,Plot 4,Yes,M,23.5
+0,Site 1,Plot 4,Yes,M,23.5
+0,Site 1,Plot 4,Yes,M,24.5
+0,Site 1,Plot 4,Yes,M,15.5
+0,Site 1,Plot 4,Yes,M,23
+0,Site 1,Plot 6,Yes,M,26.5
+0,Site 1,Plot 6,Yes,M,18.5
+0,Site 1,Plot 6,Yes,M,31
+0,Site 1,Plot 6,Yes,M,24
 0,Site 1,Plot 6,Yes,M,26
 0,Site 2,Plot 1,No,G,65.5
-0,Site 2,Plot 1,No,M,26
 0,Site 2,Plot 1,No,G,37.5
-0,Site 2,Plot 1,No,M,27.5
 0,Site 2,Plot 1,No,G,53.5
-0,Site 2,Plot 1,No,M,16
 0,Site 2,Plot 1,No,G,51
-0,Site 2,Plot 1,No,M,26.5
 0,Site 2,Plot 1,No,G,22.5
-0,Site 2,Plot 1,No,M,21.5
-0,Site 2,Plot 2,Yes,M,15.5
-0,Site 2,Plot 2,Yes,G,37.5
-0,Site 2,Plot 2,Yes,M,18
-0,Site 2,Plot 2,Yes,G,24
-0,Site 2,Plot 2,Yes,M,38.5
-0,Site 2,Plot 2,Yes,G,34.5
-0,Site 2,Plot 2,Yes,M,22
-0,Site 2,Plot 2,Yes,G,45.5
-0,Site 2,Plot 2,Yes,M,16
-0,Site 2,Plot 2,Yes,G,35
 0,Site 2,Plot 3,No,G,64.5
-0,Site 2,Plot 3,No,M,26
 0,Site 2,Plot 3,No,G,51.5
-0,Site 2,Plot 3,No,M,26.5
 0,Site 2,Plot 3,No,G,48
-0,Site 2,Plot 3,No,M,23
 0,Site 2,Plot 3,No,G,52.5
-0,Site 2,Plot 3,No,M,18.5
 0,Site 2,Plot 3,No,G,47.5
-0,Site 2,Plot 3,No,M,29.5
-0,Site 2,Plot 4,Yes,M,30.5
-0,Site 2,Plot 4,Yes,G,46.5
-0,Site 2,Plot 4,Yes,M,21
-0,Site 2,Plot 4,Yes,G,46
-0,Site 2,Plot 4,Yes,M,40
-0,Site 2,Plot 4,Yes,G,38.5
-0,Site 2,Plot 4,Yes,M,31.5
-0,Site 2,Plot 4,Yes,G,29.5
-0,Site 2,Plot 4,Yes,M,18.5
-0,Site 2,Plot 4,Yes,G,34.5
 0,Site 2,Plot 5,No,G,57.5
-0,Site 2,Plot 5,No,M,28
 0,Site 2,Plot 5,No,G,43.5
-0,Site 2,Plot 5,No,M,26
 0,Site 2,Plot 5,No,G,27.5
-0,Site 2,Plot 5,No,M,20
 0,Site 2,Plot 5,No,G,37.5
-0,Site 2,Plot 5,No,M,33.5
 0,Site 2,Plot 5,No,G,34.5
+0,Site 2,Plot 1,No,M,26
+0,Site 2,Plot 1,No,M,27.5
+0,Site 2,Plot 1,No,M,16
+0,Site 2,Plot 1,No,M,26.5
+0,Site 2,Plot 1,No,M,21.5
+0,Site 2,Plot 3,No,M,26
+0,Site 2,Plot 3,No,M,26.5
+0,Site 2,Plot 3,No,M,23
+0,Site 2,Plot 3,No,M,18.5
+0,Site 2,Plot 3,No,M,29.5
+0,Site 2,Plot 5,No,M,28
+0,Site 2,Plot 5,No,M,26
+0,Site 2,Plot 5,No,M,20
+0,Site 2,Plot 5,No,M,33.5
 0,Site 2,Plot 5,No,M,19.5
-0,Site 2,Plot 6,Yes,M,23.5
+0,Site 2,Plot 2,Yes,G,37.5
+0,Site 2,Plot 2,Yes,G,24
+0,Site 2,Plot 2,Yes,G,34.5
+0,Site 2,Plot 2,Yes,G,45.5
+0,Site 2,Plot 2,Yes,G,35
+0,Site 2,Plot 4,Yes,G,46.5
+0,Site 2,Plot 4,Yes,G,46
+0,Site 2,Plot 4,Yes,G,38.5
+0,Site 2,Plot 4,Yes,G,29.5
+0,Site 2,Plot 4,Yes,G,34.5
 0,Site 2,Plot 6,Yes,G,36.5
-0,Site 2,Plot 6,Yes,M,24.5
 0,Site 2,Plot 6,Yes,G,21.5
-0,Site 2,Plot 6,Yes,M,15.5
 0,Site 2,Plot 6,Yes,G,41.5
-0,Site 2,Plot 6,Yes,M,17.5
 0,Site 2,Plot 6,Yes,G,37.5
-0,Site 2,Plot 6,Yes,M,18.5
 0,Site 2,Plot 6,Yes,G,27.5
+0,Site 2,Plot 2,Yes,M,15.5
+0,Site 2,Plot 2,Yes,M,18
+0,Site 2,Plot 2,Yes,M,38.5
+0,Site 2,Plot 2,Yes,M,22
+0,Site 2,Plot 2,Yes,M,16
+0,Site 2,Plot 4,Yes,M,30.5
+0,Site 2,Plot 4,Yes,M,21
+0,Site 2,Plot 4,Yes,M,40
+0,Site 2,Plot 4,Yes,M,31.5
+0,Site 2,Plot 4,Yes,M,18.5
+0,Site 2,Plot 6,Yes,M,23.5
+0,Site 2,Plot 6,Yes,M,24.5
+0,Site 2,Plot 6,Yes,M,15.5
+0,Site 2,Plot 6,Yes,M,17.5
+0,Site 2,Plot 6,Yes,M,18.5
 0,Site 3,Plot 1,No,G,29.5
-0,Site 3,Plot 1,No,M,12
 0,Site 3,Plot 1,No,G,30.5
-0,Site 3,Plot 1,No,M,27.5
 0,Site 3,Plot 1,No,G,42.5
-0,Site 3,Plot 1,No,M,16.5
 0,Site 3,Plot 1,No,G,41.5
-0,Site 3,Plot 1,No,M,10.5
 0,Site 3,Plot 1,No,G,31.5
-0,Site 3,Plot 1,No,M,32.5
-0,Site 3,Plot 2,Yes,M,25.5
-0,Site 3,Plot 2,Yes,G,37.5
-0,Site 3,Plot 2,Yes,M,7.5
-0,Site 3,Plot 2,Yes,G,41.5
-0,Site 3,Plot 2,Yes,M,22
-0,Site 3,Plot 2,Yes,G,41.5
-0,Site 3,Plot 2,Yes,M,8.5
-0,Site 3,Plot 2,Yes,G,42.5
-0,Site 3,Plot 2,Yes,M,39
-0,Site 3,Plot 2,Yes,G,32
 0,Site 3,Plot 3,No,G,40.5
-0,Site 3,Plot 3,No,M,4.5
 0,Site 3,Plot 3,No,G,30.5
-0,Site 3,Plot 3,No,M,13.5
 0,Site 3,Plot 3,No,G,33.5
-0,Site 3,Plot 3,No,M,39.6
 0,Site 3,Plot 3,No,G,23
-0,Site 3,Plot 3,No,M,20.5
 0,Site 3,Plot 3,No,G,26.5
-0,Site 3,Plot 3,No,M,8.5
-0,Site 3,Plot 4,Yes,G,21
-0,Site 3,Plot 4,Yes,M,18
-0,Site 3,Plot 4,Yes,G,29.5
-0,Site 3,Plot 4,Yes,M,13
-0,Site 3,Plot 4,Yes,G,22.5
-0,Site 3,Plot 4,Yes,M,16.5
-0,Site 3,Plot 4,Yes,G,35.5
-0,Site 3,Plot 4,Yes,M,19
-0,Site 3,Plot 4,Yes,G,39.5
-0,Site 3,Plot 4,Yes,M,7
 0,Site 3,Plot 5,No,G,55.5
-0,Site 3,Plot 5,No,M,11.5
 0,Site 3,Plot 5,No,G,40.5
-0,Site 3,Plot 5,No,M,19
 0,Site 3,Plot 5,No,G,30.5
-0,Site 3,Plot 5,No,M,14.5
 0,Site 3,Plot 5,No,G,32.5
-0,Site 3,Plot 5,No,M,6.5
 0,Site 3,Plot 5,No,G,37.5
+0,Site 3,Plot 1,No,M,12
+0,Site 3,Plot 1,No,M,27.5
+0,Site 3,Plot 1,No,M,16.5
+0,Site 3,Plot 1,No,M,10.5
+0,Site 3,Plot 1,No,M,32.5
+0,Site 3,Plot 3,No,M,4.5
+0,Site 3,Plot 3,No,M,13.5
+0,Site 3,Plot 3,No,M,39.6
+0,Site 3,Plot 3,No,M,20.5
+0,Site 3,Plot 3,No,M,8.5
+0,Site 3,Plot 5,No,M,11.5
+0,Site 3,Plot 5,No,M,19
+0,Site 3,Plot 5,No,M,14.5
+0,Site 3,Plot 5,No,M,6.5
 0,Site 3,Plot 5,No,M,12.5
+0,Site 3,Plot 2,Yes,G,37.5
+0,Site 3,Plot 2,Yes,G,41.5
+0,Site 3,Plot 2,Yes,G,41.5
+0,Site 3,Plot 2,Yes,G,42.5
+0,Site 3,Plot 2,Yes,G,32
+0,Site 3,Plot 4,Yes,G,21
+0,Site 3,Plot 4,Yes,G,29.5
+0,Site 3,Plot 4,Yes,G,22.5
+0,Site 3,Plot 4,Yes,G,35.5
+0,Site 3,Plot 4,Yes,G,39.5
 0,Site 3,Plot 6,Yes,G,37.5
-0,Site 3,Plot 6,Yes,M,9.5
 0,Site 3,Plot 6,Yes,G,26.5
-0,Site 3,Plot 6,Yes,M,28.5
 0,Site 3,Plot 6,Yes,G,31.5
-0,Site 3,Plot 6,Yes,M,16.5
 0,Site 3,Plot 6,Yes,G,25
-0,Site 3,Plot 6,Yes,M,16
 0,Site 3,Plot 6,Yes,G,28.5
-0,Site 3,Plot 6,No,G,30.1
-5 Months,Site 1,Plot 1,No,M,Dead
-5 Months,Site 1,Plot 1,No,G,1
-5 Months,Site 1,Plot 1,No,M,1.5
-5 Months,Site 1,Plot 1,No,G,5.5
-5 Months,Site 1,Plot 1,No,M,Dead
-5 Months,Site 1,Plot 1,No,G,2.5
-5 Months,Site 1,Plot 1,No,M,Dead
-5 Months,Site 1,Plot 1,No,G,1.5
-5 Months,Site 1,Plot 1,No,M,0.05
-5 Months,Site 1,Plot 1,No,G,3.5
-5 Months,Site 1,Plot 2,Yes,M,0.05
-5 Months,Site 1,Plot 2,Yes,G,0.25
-5 Months,Site 1,Plot 2,Yes,M,Dead
-5 Months,Site 1,Plot 2,Yes,G,2.5
-5 Months,Site 1,Plot 2,Yes,M,0.05
-5 Months,Site 1,Plot 2,Yes,G,2.5
-5 Months,Site 1,Plot 2,Yes,M,Dead
-5 Months,Site 1,Plot 2,Yes,G,3
-5 Months,Site 1,Plot 2,Yes,M,0.05
-5 Months,Site 1,Plot 2,Yes,G,2.5
-5 Months,Site 1,Plot 3,No,M,0.05
-5 Months,Site 1,Plot 3,No,G,4
-5 Months,Site 1,Plot 3,No,M,3.5
-5 Months,Site 1,Plot 3,No,G,2.5
-5 Months,Site 1,Plot 3,No,M,0.05
-5 Months,Site 1,Plot 3,No,G,5.5
-5 Months,Site 1,Plot 3,No,M,0.05
-5 Months,Site 1,Plot 3,No,G,3.5
-5 Months,Site 1,Plot 3,No,M,Dead
-5 Months,Site 1,Plot 3,No,G,Dead
-5 Months,Site 1,Plot 4,Yes,M,Dead
-5 Months,Site 1,Plot 4,Yes,G,4.5
-5 Months,Site 1,Plot 4,Yes,M,Dead
-5 Months,Site 1,Plot 4,Yes,G,2.5
-5 Months,Site 1,Plot 4,Yes,M,Dead
-5 Months,Site 1,Plot 4,Yes,G,3.5
-5 Months,Site 1,Plot 4,Yes,M,Dead
-5 Months,Site 1,Plot 4,Yes,G,2.5
-5 Months,Site 1,Plot 4,Yes,M,Dead
-5 Months,Site 1,Plot 4,Yes,G,3
-5 Months,Site 1,Plot 5,No,G,3
-5 Months,Site 1,Plot 5,No,M,Dead
-5 Months,Site 1,Plot 5,No,G,2.5
-5 Months,Site 1,Plot 5,No,M,0.5
-5 Months,Site 1,Plot 5,No,G,3.5
-5 Months,Site 1,Plot 5,No,M,1
-5 Months,Site 1,Plot 5,No,G,2
-5 Months,Site 1,Plot 5,No,M,Dead
-5 Months,Site 1,Plot 5,No,G,4
-5 Months,Site 1,Plot 5,No,M,0.5
-5 Months,Site 1,Plot 6,Yes,G,2
-5 Months,Site 1,Plot 6,Yes,M,0.5
-5 Months,Site 1,Plot 6,Yes,G,4
-5 Months,Site 1,Plot 6,Yes,M,Dead
-5 Months,Site 1,Plot 6,Yes,G,3.5
-5 Months,Site 1,Plot 6,Yes,M,Dead
-5 Months,Site 1,Plot 6,Yes,G,3
-5 Months,Site 1,Plot 6,Yes,M,0.05
-5 Months,Site 1,Plot 6,Yes,G,Dead
-5 Months,Site 1,Plot 6,Yes,M,0.5
-5 Months,Site 2,Plot 1,No,G,3.5
-5 Months,Site 2,Plot 1,No,M,Dead
-5 Months,Site 2,Plot 1,No,G,3.5
-5 Months,Site 2,Plot 1,No,M,4
-5 Months,Site 2,Plot 1,No,G,2
-5 Months,Site 2,Plot 1,No,M,Dead
-5 Months,Site 2,Plot 1,No,G,2.5
-5 Months,Site 2,Plot 1,No,M,0.25
-5 Months,Site 2,Plot 1,No,G,2.5
-5 Months,Site 2,Plot 1,No,M,Dead
-5 Months,Site 2,Plot 2,Yes,M,Dead
-5 Months,Site 2,Plot 2,Yes,G,0.25
-5 Months,Site 2,Plot 2,Yes,M,Dead
-5 Months,Site 2,Plot 2,Yes,M,0.75
-5 Months,Site 2,Plot 2,Yes,G,0.25
-5 Months,Site 2,Plot 2,Yes,G,2
-5 Months,Site 2,Plot 2,Yes,M,Dead
-5 Months,Site 2,Plot 2,Yes,G,1.5
-5 Months,Site 2,Plot 2,Yes,M,Dead
-5 Months,Site 2,Plot 2,Yes,G,1.5
-5 Months,Site 2,Plot 3,No,G,4
-5 Months,Site 2,Plot 3,No,M,0.25
-5 Months,Site 2,Plot 3,No,G,2.5
-5 Months,Site 2,Plot 3,No,M,Dead
-5 Months,Site 2,Plot 3,No,G,2.5
-5 Months,Site 2,Plot 3,No,M,Dead
-5 Months,Site 2,Plot 3,No,G,1.5
-5 Months,Site 2,Plot 3,No,M,0.05
-5 Months,Site 2,Plot 3,No,G,1.2
-5 Months,Site 2,Plot 3,No,M,Dead
-5 Months,Site 2,Plot 4,Yes,M,Dead
-5 Months,Site 2,Plot 4,Yes,G,4.5
-5 Months,Site 2,Plot 4,Yes,M,2.5
-5 Months,Site 2,Plot 4,Yes,G,1.5
-5 Months,Site 2,Plot 4,Yes,M,Dead
-5 Months,Site 2,Plot 4,Yes,G,2.5
-5 Months,Site 2,Plot 4,Yes,M,10.25
-5 Months,Site 2,Plot 4,Yes,G,1.5
-5 Months,Site 2,Plot 4,Yes,M,7.5
-5 Months,Site 2,Plot 4,Yes,G,1.5
-5 Months,Site 2,Plot 5,No,G,2.5
-5 Months,Site 2,Plot 5,No,M,Dead
-5 Months,Site 2,Plot 5,No,G,3
-5 Months,Site 2,Plot 5,No,M,1.5
-5 Months,Site 2,Plot 5,No,G,1.5
-5 Months,Site 2,Plot 5,No,M,Dead
-5 Months,Site 2,Plot 5,No,G,1
-5 Months,Site 2,Plot 5,No,M,Dead
-5 Months,Site 2,Plot 5,No,G,0.25
-5 Months,Site 2,Plot 5,No,M,3.5
-5 Months,Site 2,Plot 6,Yes,M,0.05
-5 Months,Site 2,Plot 6,Yes,G,2.5
-5 Months,Site 2,Plot 6,Yes,M,Dead
-5 Months,Site 2,Plot 6,Yes,G,2.5
-5 Months,Site 2,Plot 6,Yes,M,Dead
-5 Months,Site 2,Plot 6,Yes,G,2.5
-5 Months,Site 2,Plot 6,Yes,M,Dead
-5 Months,Site 2,Plot 6,Yes,G,3.5
-5 Months,Site 2,Plot 6,Yes,M,Dead
-5 Months,Site 2,Plot 6,Yes,G,0.5
-5 Months,Site 3,Plot 1,No,G,2.5
-5 Months,Site 3,Plot 1,No,M,5.5
-5 Months,Site 3,Plot 1,No,G,2.5
-5 Months,Site 3,Plot 1,No,M,Dead
-5 Months,Site 3,Plot 1,No,G,4
-5 Months,Site 3,Plot 1,No,M,Dead
-5 Months,Site 3,Plot 1,No,G,2.5
-5 Months,Site 3,Plot 1,No,M,6.5
-5 Months,Site 3,Plot 1,No,G,2.5
-5 Months,Site 3,Plot 1,No,M,Dead
-5 Months,Site 3,Plot 2,Yes,M,Dead
-5 Months,Site 3,Plot 2,Yes,G,4.5
-5 Months,Site 3,Plot 2,Yes,M,Dead
-5 Months,Site 3,Plot 2,Yes,G,3
-5 Months,Site 3,Plot 2,Yes,M,3.5
-5 Months,Site 3,Plot 2,Yes,G,1.5
-5 Months,Site 3,Plot 2,Yes,M,1.5
-5 Months,Site 3,Plot 2,Yes,G,3
-5 Months,Site 3,Plot 2,Yes,M,Dead
-5 Months,Site 3,Plot 2,Yes,G,2.5
-5 Months,Site 3,Plot 3,No,G,2.5
-5 Months,Site 3,Plot 3,No,M,3.5
-5 Months,Site 3,Plot 3,No,G,2
-5 Months,Site 3,Plot 3,No,M,2
-5 Months,Site 3,Plot 3,No,G,3
-5 Months,Site 3,Plot 3,No,M,0.5
-5 Months,Site 3,Plot 3,No,G,1.5
-5 Months,Site 3,Plot 3,No,M,1.5
-5 Months,Site 3,Plot 3,No,G,2.5
-5 Months,Site 3,Plot 3,No,M,4.5
-5 Months,Site 3,Plot 4,Yes,G,2.5
-5 Months,Site 3,Plot 4,Yes,M,1
-5 Months,Site 3,Plot 4,Yes,G,7.5
-5 Months,Site 3,Plot 4,Yes,M,7.5
-5 Months,Site 3,Plot 4,Yes,G,3.5
-5 Months,Site 3,Plot 4,Yes,M,Dead
-5 Months,Site 3,Plot 4,Yes,G,3.5
-5 Months,Site 3,Plot 4,Yes,M,Dead
-5 Months,Site 3,Plot 4,Yes,G,1.5
-5 Months,Site 3,Plot 4,Yes,M,5
-5 Months,Site 3,Plot 5,No,G,2
-5 Months,Site 3,Plot 5,No,M,3.5
-5 Months,Site 3,Plot 5,No,G,2.5
-5 Months,Site 3,Plot 5,No,M,Dead
-5 Months,Site 3,Plot 5,No,G,4
-5 Months,Site 3,Plot 5,No,M,Dead
-5 Months,Site 3,Plot 5,No,G,2.5
-5 Months,Site 3,Plot 5,No,M,Dead
-5 Months,Site 3,Plot 5,No,G,4.5
-5 Months,Site 3,Plot 5,No,M,Dead
-5 Months,Site 3,Plot 6,Yes,G,2.5
-5 Months,Site 3,Plot 6,Yes,M,5
-5 Months,Site 3,Plot 6,Yes,G,2.5
-5 Months,Site 3,Plot 6,Yes,M,Dead
-5 Months,Site 3,Plot 6,Yes,G,2.5
-5 Months,Site 3,Plot 6,Yes,M,Dead
-5 Months,Site 3,Plot 6,Yes,G,3.5
-5 Months,Site 3,Plot 6,Yes,M,3.5
-5 Months,Site 3,Plot 6,Yes,G,4
-5 Months,Site 3,Plot 6,Yes,M,Dead
-11 Months,Site 1,Plot 1,No,M,Dead
+0,Site 3,Plot 2,Yes,M,25.5
+0,Site 3,Plot 2,Yes,M,7.5
+0,Site 3,Plot 2,Yes,M,22
+0,Site 3,Plot 2,Yes,M,8.5
+0,Site 3,Plot 2,Yes,M,39
+0,Site 3,Plot 4,Yes,M,18
+0,Site 3,Plot 4,Yes,M,13
+0,Site 3,Plot 4,Yes,M,16.5
+0,Site 3,Plot 4,Yes,M,19
+0,Site 3,Plot 4,Yes,M,7
+0,Site 3,Plot 6,Yes,M,9.5
+0,Site 3,Plot 6,Yes,M,28.5
+0,Site 3,Plot 6,Yes,M,16.5
+0,Site 3,Plot 6,Yes,M,16
+0,Site 3,Plot 6,Yes,M,20.5
 11 Months,Site 1,Plot 1,No,G,Dead
-11 Months,Site 1,Plot 1,No,M,7
 11 Months,Site 1,Plot 1,No,G,12.5
-11 Months,Site 1,Plot 1,No,M,Dead
 11 Months,Site 1,Plot 1,No,G,15.5
-11 Months,Site 1,Plot 1,No,M,Dead
 11 Months,Site 1,Plot 1,No,G,Dead
-11 Months,Site 1,Plot 1,No,M,Dead
 11 Months,Site 1,Plot 1,No,G,17.5
-11 Months,Site 1,Plot 2,Yes,M,Dead
-11 Months,Site 1,Plot 2,Yes,G,38
-11 Months,Site 1,Plot 2,Yes,M,Dead
-11 Months,Site 1,Plot 2,Yes,G,45
-11 Months,Site 1,Plot 2,Yes,M,Dead
-11 Months,Site 1,Plot 2,Yes,G,38
-11 Months,Site 1,Plot 2,Yes,M,Dead
-11 Months,Site 1,Plot 2,Yes,G,48
-11 Months,Site 1,Plot 2,Yes,M,Dead
-11 Months,Site 1,Plot 2,Yes,G,25
-11 Months,Site 1,Plot 3,No,M,8.5
 11 Months,Site 1,Plot 3,No,G,19.5
-11 Months,Site 1,Plot 3,No,M,6.5
 11 Months,Site 1,Plot 3,No,G,14.5
-11 Months,Site 1,Plot 3,No,M,Dead
 11 Months,Site 1,Plot 3,No,G,28
-11 Months,Site 1,Plot 3,No,M,Dead
 11 Months,Site 1,Plot 3,No,G,20.5
-11 Months,Site 1,Plot 3,No,M,Dead
 11 Months,Site 1,Plot 3,No,G,Dead
-11 Months,Site 1,Plot 4,Yes,M,Dead
-11 Months,Site 1,Plot 4,Yes,G,36.5
-11 Months,Site 1,Plot 4,Yes,M,Dead
-11 Months,Site 1,Plot 4,Yes,G,28
-11 Months,Site 1,Plot 4,Yes,M,Dead
-11 Months,Site 1,Plot 4,Yes,G,35.5
-11 Months,Site 1,Plot 4,Yes,M,Dead
-11 Months,Site 1,Plot 4,Yes,G,18
-11 Months,Site 1,Plot 4,Yes,M,Dead
-11 Months,Site 1,Plot 4,Yes,G,12.5
 11 Months,Site 1,Plot 5,No,G,65
-11 Months,Site 1,Plot 5,No,M,Dead
 11 Months,Site 1,Plot 5,No,G,40
-11 Months,Site 1,Plot 5,No,M,Dead
 11 Months,Site 1,Plot 5,No,G,38.5
-11 Months,Site 1,Plot 5,No,M,6.5
 11 Months,Site 1,Plot 5,No,G,43.5
-11 Months,Site 1,Plot 5,No,M,Dead
 11 Months,Site 1,Plot 5,No,G,10.5
+11 Months,Site 1,Plot 1,No,M,Dead
+11 Months,Site 1,Plot 1,No,M,7
+11 Months,Site 1,Plot 1,No,M,Dead
+11 Months,Site 1,Plot 1,No,M,Dead
+11 Months,Site 1,Plot 1,No,M,Dead
+11 Months,Site 1,Plot 3,No,M,8.5
+11 Months,Site 1,Plot 3,No,M,6.5
+11 Months,Site 1,Plot 3,No,M,Dead
+11 Months,Site 1,Plot 3,No,M,Dead
+11 Months,Site 1,Plot 3,No,M,Dead
+11 Months,Site 1,Plot 5,No,M,Dead
+11 Months,Site 1,Plot 5,No,M,Dead
+11 Months,Site 1,Plot 5,No,M,6.5
+11 Months,Site 1,Plot 5,No,M,Dead
 11 Months,Site 1,Plot 5,No,M,9.5
+11 Months,Site 1,Plot 2,Yes,G,38
+11 Months,Site 1,Plot 2,Yes,G,45
+11 Months,Site 1,Plot 2,Yes,G,38
+11 Months,Site 1,Plot 2,Yes,G,48
+11 Months,Site 1,Plot 2,Yes,G,25
+11 Months,Site 1,Plot 4,Yes,G,36.5
+11 Months,Site 1,Plot 4,Yes,G,28
+11 Months,Site 1,Plot 4,Yes,G,35.5
+11 Months,Site 1,Plot 4,Yes,G,18
+11 Months,Site 1,Plot 4,Yes,G,12.5
 11 Months,Site 1,Plot 6,Yes,G,22
-11 Months,Site 1,Plot 6,Yes,M,10.5
 11 Months,Site 1,Plot 6,Yes,G,29.5
-11 Months,Site 1,Plot 6,Yes,M,Dead
 11 Months,Site 1,Plot 6,Yes,G,Dead
-11 Months,Site 1,Plot 6,Yes,M,Dead
 11 Months,Site 1,Plot 6,Yes,G,Dead
-11 Months,Site 1,Plot 6,Yes,M,Dead
 11 Months,Site 1,Plot 6,Yes,G,Dead
+11 Months,Site 1,Plot 2,Yes,M,Dead
+11 Months,Site 1,Plot 2,Yes,M,Dead
+11 Months,Site 1,Plot 2,Yes,M,Dead
+11 Months,Site 1,Plot 2,Yes,M,Dead
+11 Months,Site 1,Plot 2,Yes,M,Dead
+11 Months,Site 1,Plot 4,Yes,M,Dead
+11 Months,Site 1,Plot 4,Yes,M,Dead
+11 Months,Site 1,Plot 4,Yes,M,Dead
+11 Months,Site 1,Plot 4,Yes,M,Dead
+11 Months,Site 1,Plot 4,Yes,M,Dead
+11 Months,Site 1,Plot 6,Yes,M,10.5
+11 Months,Site 1,Plot 6,Yes,M,Dead
+11 Months,Site 1,Plot 6,Yes,M,Dead
+11 Months,Site 1,Plot 6,Yes,M,Dead
 11 Months,Site 1,Plot 6,Yes,M,Dead
 11 Months,Site 2,Plot 1,No,G,18.5
-11 Months,Site 2,Plot 1,No,M,Dead
 11 Months,Site 2,Plot 1,No,G,20.5
-11 Months,Site 2,Plot 1,No,M,13
 11 Months,Site 2,Plot 1,No,G,26
-11 Months,Site 2,Plot 1,No,M,Dead
 11 Months,Site 2,Plot 1,No,G,60
-11 Months,Site 2,Plot 1,No,M,5.5
 11 Months,Site 2,Plot 1,No,G,Dead
+11 Months,Site 2,Plot 3,No,G,29
+11 Months,Site 2,Plot 3,No,G,16.5
+11 Months,Site 2,Plot 3,No,G,32.5
+11 Months,Site 2,Plot 3,No,G,14.5
+11 Months,Site 2,Plot 3,No,G,Dead
+11 Months,Site 2,Plot 5,No,G,50
+11 Months,Site 2,Plot 5,No,G,30
+11 Months,Site 2,Plot 5,No,G,Dead
+11 Months,Site 2,Plot 5,No,G,12.5
+11 Months,Site 2,Plot 5,No,G,Dead
 11 Months,Site 2,Plot 1,No,M,Dead
-11 Months,Site 2,Plot 2,Yes,M,Dead
+11 Months,Site 2,Plot 1,No,M,13
+11 Months,Site 2,Plot 1,No,M,Dead
+11 Months,Site 2,Plot 1,No,M,5.5
+11 Months,Site 2,Plot 1,No,M,Dead
+11 Months,Site 2,Plot 3,No,M,Dead
+11 Months,Site 2,Plot 3,No,M,Dead
+11 Months,Site 2,Plot 3,No,M,Dead
+11 Months,Site 2,Plot 3,No,M,Dead
+11 Months,Site 2,Plot 3,No,M,Dead
+11 Months,Site 2,Plot 5,No,M,Dead
+11 Months,Site 2,Plot 5,No,M,7.5
+11 Months,Site 2,Plot 5,No,M,Dead
+11 Months,Site 2,Plot 5,No,M,Dead
+11 Months,Site 2,Plot 5,No,M,35
 11 Months,Site 2,Plot 2,Yes,G,Dead
-11 Months,Site 2,Plot 2,Yes,M,Dead
-11 Months,Site 2,Plot 2,Yes,M,Dead
 11 Months,Site 2,Plot 2,Yes,G,Dead
 11 Months,Site 2,Plot 2,Yes,G,49.5
-11 Months,Site 2,Plot 2,Yes,M,Dead
 11 Months,Site 2,Plot 2,Yes,G,Dead
-11 Months,Site 2,Plot 2,Yes,M,Dead
 11 Months,Site 2,Plot 2,Yes,G,Dead
-11 Months,Site 2,Plot 3,No,G,29
-11 Months,Site 2,Plot 3,No,M,Dead
-11 Months,Site 2,Plot 3,No,G,16.5
-11 Months,Site 2,Plot 3,No,M,Dead
-11 Months,Site 2,Plot 3,No,G,32.5
-11 Months,Site 2,Plot 3,No,M,Dead
-11 Months,Site 2,Plot 3,No,G,14.5
-11 Months,Site 2,Plot 3,No,M,Dead
-11 Months,Site 2,Plot 3,No,G,Dead
-11 Months,Site 2,Plot 3,No,M,Dead
-11 Months,Site 2,Plot 4,Yes,M,Dead
 11 Months,Site 2,Plot 4,Yes,G,55
-11 Months,Site 2,Plot 4,Yes,M,12
 11 Months,Site 2,Plot 4,Yes,G,36
-11 Months,Site 2,Plot 4,Yes,M,Dead
 11 Months,Site 2,Plot 4,Yes,G,12.5
-11 Months,Site 2,Plot 4,Yes,M,16.5
 11 Months,Site 2,Plot 4,Yes,G,14.5
-11 Months,Site 2,Plot 4,Yes,M,10
 11 Months,Site 2,Plot 4,Yes,G,Dead
-11 Months,Site 2,Plot 5,No,G,50
-11 Months,Site 2,Plot 5,No,M,Dead
-11 Months,Site 2,Plot 5,No,G,30
-11 Months,Site 2,Plot 5,No,M,7.5
-11 Months,Site 2,Plot 5,No,G,Dead
-11 Months,Site 2,Plot 5,No,M,Dead
-11 Months,Site 2,Plot 5,No,G,12.5
-11 Months,Site 2,Plot 5,No,M,Dead
-11 Months,Site 2,Plot 5,No,G,Dead
-11 Months,Site 2,Plot 5,No,M,35
-11 Months,Site 2,Plot 6,Yes,M,Dead
 11 Months,Site 2,Plot 6,Yes,G,Dead
-11 Months,Site 2,Plot 6,Yes,M,Dead
 11 Months,Site 2,Plot 6,Yes,G,12
-11 Months,Site 2,Plot 6,Yes,M,Dead
 11 Months,Site 2,Plot 6,Yes,G,6.5
-11 Months,Site 2,Plot 6,Yes,M,Dead
 11 Months,Site 2,Plot 6,Yes,G,30
-11 Months,Site 2,Plot 6,Yes,M,Dead
 11 Months,Site 2,Plot 6,Yes,G,23.5
+11 Months,Site 2,Plot 2,Yes,M,Dead
+11 Months,Site 2,Plot 2,Yes,M,Dead
+11 Months,Site 2,Plot 2,Yes,M,Dead
+11 Months,Site 2,Plot 2,Yes,M,Dead
+11 Months,Site 2,Plot 2,Yes,M,Dead
+11 Months,Site 2,Plot 4,Yes,M,Dead
+11 Months,Site 2,Plot 4,Yes,M,12
+11 Months,Site 2,Plot 4,Yes,M,Dead
+11 Months,Site 2,Plot 4,Yes,M,16.5
+11 Months,Site 2,Plot 4,Yes,M,10
+11 Months,Site 2,Plot 6,Yes,M,Dead
+11 Months,Site 2,Plot 6,Yes,M,Dead
+11 Months,Site 2,Plot 6,Yes,M,Dead
+11 Months,Site 2,Plot 6,Yes,M,Dead
+11 Months,Site 2,Plot 6,Yes,M,Dead
 11 Months,Site 3,Plot 1,No,G,24.5
-11 Months,Site 3,Plot 1,No,M,8
 11 Months,Site 3,Plot 1,No,G,25
-11 Months,Site 3,Plot 1,No,M,Dead
 11 Months,Site 3,Plot 1,No,G,Dead
-11 Months,Site 3,Plot 1,No,M,Dead
 11 Months,Site 3,Plot 1,No,G,Dead
-11 Months,Site 3,Plot 1,No,M,Dead
 11 Months,Site 3,Plot 1,No,G,45
-11 Months,Site 3,Plot 1,No,M,Dead
-11 Months,Site 3,Plot 2,Yes,M,Dead
-11 Months,Site 3,Plot 2,Yes,G,50
-11 Months,Site 3,Plot 2,Yes,M,Dead
-11 Months,Site 3,Plot 2,Yes,G,30
-11 Months,Site 3,Plot 2,Yes,M,15
-11 Months,Site 3,Plot 2,Yes,G,24
-11 Months,Site 3,Plot 2,Yes,M,3
-11 Months,Site 3,Plot 2,Yes,G,25
-11 Months,Site 3,Plot 2,Yes,M,Dead
-11 Months,Site 3,Plot 2,Yes,G,10
 11 Months,Site 3,Plot 3,No,G,30
-11 Months,Site 3,Plot 3,No,M,7.5
 11 Months,Site 3,Plot 3,No,G,16.5
-11 Months,Site 3,Plot 3,No,M,4
 11 Months,Site 3,Plot 3,No,G,27
-11 Months,Site 3,Plot 3,No,M,6.5
 11 Months,Site 3,Plot 3,No,G,10.5
-11 Months,Site 3,Plot 3,No,M,12
 11 Months,Site 3,Plot 3,No,G,Dead
-11 Months,Site 3,Plot 3,No,M,Dead
-11 Months,Site 3,Plot 4,Yes,G,29
-11 Months,Site 3,Plot 4,Yes,M,10
-11 Months,Site 3,Plot 4,Yes,G,14
-11 Months,Site 3,Plot 4,Yes,M,5
-11 Months,Site 3,Plot 4,Yes,G,60.5
-11 Months,Site 3,Plot 4,Yes,M,Dead
-11 Months,Site 3,Plot 4,Yes,G,Dead
-11 Months,Site 3,Plot 4,Yes,M,Dead
-11 Months,Site 3,Plot 4,Yes,G,24
-11 Months,Site 3,Plot 4,Yes,M,7
 11 Months,Site 3,Plot 5,No,G,10
+11 Months,Site 3,Plot 5,No,G,25
+11 Months,Site 3,Plot 5,No,G,Dead
+11 Months,Site 3,Plot 5,No,G,Dead
+11 Months,Site 3,Plot 5,No,G,25
+11 Months,Site 3,Plot 1,No,M,8
+11 Months,Site 3,Plot 1,No,M,Dead
+11 Months,Site 3,Plot 1,No,M,Dead
+11 Months,Site 3,Plot 1,No,M,Dead
+11 Months,Site 3,Plot 1,No,M,Dead
+11 Months,Site 3,Plot 3,No,M,7.5
+11 Months,Site 3,Plot 3,No,M,4
+11 Months,Site 3,Plot 3,No,M,6.5
+11 Months,Site 3,Plot 3,No,M,12
+11 Months,Site 3,Plot 3,No,M,Dead
 11 Months,Site 3,Plot 5,No,M,12
-11 Months,Site 3,Plot 5,No,G,25
 11 Months,Site 3,Plot 5,No,M,Dead
-11 Months,Site 3,Plot 5,No,G,Dead
 11 Months,Site 3,Plot 5,No,M,Dead
-11 Months,Site 3,Plot 5,No,G,Dead
 11 Months,Site 3,Plot 5,No,M,Dead
-11 Months,Site 3,Plot 5,No,G,25
 11 Months,Site 3,Plot 5,No,M,Dead
+11 Months,Site 3,Plot 2,Yes,G,50
+11 Months,Site 3,Plot 2,Yes,G,30
+11 Months,Site 3,Plot 2,Yes,G,24
+11 Months,Site 3,Plot 2,Yes,G,25
+11 Months,Site 3,Plot 2,Yes,G,10
+11 Months,Site 3,Plot 4,Yes,G,29
+11 Months,Site 3,Plot 4,Yes,G,14
+11 Months,Site 3,Plot 4,Yes,G,60.5
+11 Months,Site 3,Plot 4,Yes,G,Dead
+11 Months,Site 3,Plot 4,Yes,G,24
 11 Months,Site 3,Plot 6,Yes,G,30
-11 Months,Site 3,Plot 6,Yes,M,6.5
 11 Months,Site 3,Plot 6,Yes,G,19.5
-11 Months,Site 3,Plot 6,Yes,M,Dead
 11 Months,Site 3,Plot 6,Yes,G,24
-11 Months,Site 3,Plot 6,Yes,M,Dead
 11 Months,Site 3,Plot 6,Yes,G,Dead
-11 Months,Site 3,Plot 6,Yes,M,6
 11 Months,Site 3,Plot 6,Yes,G,34
+11 Months,Site 3,Plot 2,Yes,M,Dead
+11 Months,Site 3,Plot 2,Yes,M,Dead
+11 Months,Site 3,Plot 2,Yes,M,15
+11 Months,Site 3,Plot 2,Yes,M,3
+11 Months,Site 3,Plot 2,Yes,M,Dead
+11 Months,Site 3,Plot 4,Yes,M,10
+11 Months,Site 3,Plot 4,Yes,M,5
+11 Months,Site 3,Plot 4,Yes,M,Dead
+11 Months,Site 3,Plot 4,Yes,M,Dead
+11 Months,Site 3,Plot 4,Yes,M,7
+11 Months,Site 3,Plot 6,Yes,M,6.5
 11 Months,Site 3,Plot 6,Yes,M,Dead
+11 Months,Site 3,Plot 6,Yes,M,Dead
+11 Months,Site 3,Plot 6,Yes,M,6
+11 Months,Site 3,Plot 6,Yes,M,Dead
+5 Months,Site 1,Plot 1,No,G,1
+5 Months,Site 1,Plot 1,No,G,5.5
+5 Months,Site 1,Plot 1,No,G,2.5
+5 Months,Site 1,Plot 1,No,G,1.5
+5 Months,Site 1,Plot 1,No,G,3.5
+5 Months,Site 1,Plot 3,No,G,4
+5 Months,Site 1,Plot 3,No,G,2.5
+5 Months,Site 1,Plot 3,No,G,5.5
+5 Months,Site 1,Plot 3,No,G,3.5
+5 Months,Site 1,Plot 3,No,G,Dead
+5 Months,Site 1,Plot 5,No,G,3
+5 Months,Site 1,Plot 5,No,G,2.5
+5 Months,Site 1,Plot 5,No,G,3.5
+5 Months,Site 1,Plot 5,No,G,2
+5 Months,Site 1,Plot 5,No,G,4
+5 Months,Site 1,Plot 1,No,M,Dead
+5 Months,Site 1,Plot 1,No,M,1.5
+5 Months,Site 1,Plot 1,No,M,Dead
+5 Months,Site 1,Plot 1,No,M,Dead
+5 Months,Site 1,Plot 1,No,M,0.05
+5 Months,Site 1,Plot 3,No,M,0.05
+5 Months,Site 1,Plot 3,No,M,3.5
+5 Months,Site 1,Plot 3,No,M,0.05
+5 Months,Site 1,Plot 3,No,M,0.05
+5 Months,Site 1,Plot 3,No,M,Dead
+5 Months,Site 1,Plot 5,No,M,Dead
+5 Months,Site 1,Plot 5,No,M,0.5
+5 Months,Site 1,Plot 5,No,M,1
+5 Months,Site 1,Plot 5,No,M,Dead
+5 Months,Site 1,Plot 5,No,M,0.5
+5 Months,Site 1,Plot 2,Yes,G,0.25
+5 Months,Site 1,Plot 2,Yes,G,2.5
+5 Months,Site 1,Plot 2,Yes,G,2.5
+5 Months,Site 1,Plot 2,Yes,G,3
+5 Months,Site 1,Plot 2,Yes,G,2.5
+5 Months,Site 1,Plot 4,Yes,G,4.5
+5 Months,Site 1,Plot 4,Yes,G,2.5
+5 Months,Site 1,Plot 4,Yes,G,3.5
+5 Months,Site 1,Plot 4,Yes,G,2.5
+5 Months,Site 1,Plot 4,Yes,G,3
+5 Months,Site 1,Plot 6,Yes,G,2
+5 Months,Site 1,Plot 6,Yes,G,4
+5 Months,Site 1,Plot 6,Yes,G,3.5
+5 Months,Site 1,Plot 6,Yes,G,3
+5 Months,Site 1,Plot 6,Yes,G,Dead
+5 Months,Site 1,Plot 2,Yes,M,0.05
+5 Months,Site 1,Plot 2,Yes,M,Dead
+5 Months,Site 1,Plot 2,Yes,M,0.05
+5 Months,Site 1,Plot 2,Yes,M,Dead
+5 Months,Site 1,Plot 2,Yes,M,0.05
+5 Months,Site 1,Plot 4,Yes,M,Dead
+5 Months,Site 1,Plot 4,Yes,M,Dead
+5 Months,Site 1,Plot 4,Yes,M,Dead
+5 Months,Site 1,Plot 4,Yes,M,Dead
+5 Months,Site 1,Plot 4,Yes,M,Dead
+5 Months,Site 1,Plot 6,Yes,M,0.5
+5 Months,Site 1,Plot 6,Yes,M,Dead
+5 Months,Site 1,Plot 6,Yes,M,Dead
+5 Months,Site 1,Plot 6,Yes,M,0.05
+5 Months,Site 1,Plot 6,Yes,M,0.5
+5 Months,Site 2,Plot 1,No,G,3.5
+5 Months,Site 2,Plot 1,No,G,3.5
+5 Months,Site 2,Plot 1,No,G,2
+5 Months,Site 2,Plot 1,No,G,2.5
+5 Months,Site 2,Plot 1,No,G,2.5
+5 Months,Site 2,Plot 3,No,G,4
+5 Months,Site 2,Plot 3,No,G,2.5
+5 Months,Site 2,Plot 3,No,G,2.5
+5 Months,Site 2,Plot 3,No,G,1.5
+5 Months,Site 2,Plot 3,No,G,1.2
+5 Months,Site 2,Plot 5,No,G,2.5
+5 Months,Site 2,Plot 5,No,G,3
+5 Months,Site 2,Plot 5,No,G,1.5
+5 Months,Site 2,Plot 5,No,G,1
+5 Months,Site 2,Plot 5,No,G,0.25
+5 Months,Site 2,Plot 1,No,M,Dead
+5 Months,Site 2,Plot 1,No,M,4
+5 Months,Site 2,Plot 1,No,M,Dead
+5 Months,Site 2,Plot 1,No,M,0.25
+5 Months,Site 2,Plot 1,No,M,Dead
+5 Months,Site 2,Plot 3,No,M,0.25
+5 Months,Site 2,Plot 3,No,M,Dead
+5 Months,Site 2,Plot 3,No,M,Dead
+5 Months,Site 2,Plot 3,No,M,0.05
+5 Months,Site 2,Plot 3,No,M,Dead
+5 Months,Site 2,Plot 5,No,M,Dead
+5 Months,Site 2,Plot 5,No,M,1.5
+5 Months,Site 2,Plot 5,No,M,Dead
+5 Months,Site 2,Plot 5,No,M,Dead
+5 Months,Site 2,Plot 5,No,M,3.5
+5 Months,Site 2,Plot 2,Yes,G,0.25
+5 Months,Site 2,Plot 2,Yes,G,0.25
+5 Months,Site 2,Plot 2,Yes,G,2
+5 Months,Site 2,Plot 2,Yes,G,1.5
+5 Months,Site 2,Plot 2,Yes,G,1.5
+5 Months,Site 2,Plot 4,Yes,G,4.5
+5 Months,Site 2,Plot 4,Yes,G,1.5
+5 Months,Site 2,Plot 4,Yes,G,2.5
+5 Months,Site 2,Plot 4,Yes,G,1.5
+5 Months,Site 2,Plot 4,Yes,G,1.5
+5 Months,Site 2,Plot 6,Yes,G,2.5
+5 Months,Site 2,Plot 6,Yes,G,2.5
+5 Months,Site 2,Plot 6,Yes,G,2.5
+5 Months,Site 2,Plot 6,Yes,G,3.5
+5 Months,Site 2,Plot 6,Yes,G,0.5
+5 Months,Site 2,Plot 2,Yes,M,Dead
+5 Months,Site 2,Plot 2,Yes,M,Dead
+5 Months,Site 2,Plot 2,Yes,M,0.75
+5 Months,Site 2,Plot 2,Yes,M,Dead
+5 Months,Site 2,Plot 2,Yes,M,Dead
+5 Months,Site 2,Plot 4,Yes,M,Dead
+5 Months,Site 2,Plot 4,Yes,M,2.5
+5 Months,Site 2,Plot 4,Yes,M,Dead
+5 Months,Site 2,Plot 4,Yes,M,10.25
+5 Months,Site 2,Plot 4,Yes,M,7.5
+5 Months,Site 2,Plot 6,Yes,M,0.05
+5 Months,Site 2,Plot 6,Yes,M,Dead
+5 Months,Site 2,Plot 6,Yes,M,Dead
+5 Months,Site 2,Plot 6,Yes,M,Dead
+5 Months,Site 2,Plot 6,Yes,M,Dead
+5 Months,Site 3,Plot 1,No,G,2.5
+5 Months,Site 3,Plot 1,No,G,2.5
+5 Months,Site 3,Plot 1,No,G,4
+5 Months,Site 3,Plot 1,No,G,2.5
+5 Months,Site 3,Plot 1,No,G,2.5
+5 Months,Site 3,Plot 3,No,G,2.5
+5 Months,Site 3,Plot 3,No,G,2
+5 Months,Site 3,Plot 3,No,G,3
+5 Months,Site 3,Plot 3,No,G,1.5
+5 Months,Site 3,Plot 3,No,G,2.5
+5 Months,Site 3,Plot 5,No,G,2
+5 Months,Site 3,Plot 5,No,G,2.5
+5 Months,Site 3,Plot 5,No,G,4
+5 Months,Site 3,Plot 5,No,G,2.5
+5 Months,Site 3,Plot 5,No,G,4.5
+5 Months,Site 3,Plot 1,No,M,5.5
+5 Months,Site 3,Plot 1,No,M,Dead
+5 Months,Site 3,Plot 1,No,M,Dead
+5 Months,Site 3,Plot 1,No,M,6.5
+5 Months,Site 3,Plot 1,No,M,Dead
+5 Months,Site 3,Plot 3,No,M,3.5
+5 Months,Site 3,Plot 3,No,M,2
+5 Months,Site 3,Plot 3,No,M,0.5
+5 Months,Site 3,Plot 3,No,M,1.5
+5 Months,Site 3,Plot 3,No,M,4.5
+5 Months,Site 3,Plot 5,No,M,3.5
+5 Months,Site 3,Plot 5,No,M,Dead
+5 Months,Site 3,Plot 5,No,M,Dead
+5 Months,Site 3,Plot 5,No,M,Dead
+5 Months,Site 3,Plot 5,No,M,Dead
+5 Months,Site 3,Plot 2,Yes,G,4.5
+5 Months,Site 3,Plot 2,Yes,G,3
+5 Months,Site 3,Plot 2,Yes,G,1.5
+5 Months,Site 3,Plot 2,Yes,G,3
+5 Months,Site 3,Plot 2,Yes,G,2.5
+5 Months,Site 3,Plot 4,Yes,G,2.5
+5 Months,Site 3,Plot 4,Yes,G,7.5
+5 Months,Site 3,Plot 4,Yes,G,3.5
+5 Months,Site 3,Plot 4,Yes,G,3.5
+5 Months,Site 3,Plot 4,Yes,G,1.5
+5 Months,Site 3,Plot 6,Yes,G,2.5
+5 Months,Site 3,Plot 6,Yes,G,2.5
+5 Months,Site 3,Plot 6,Yes,G,2.5
+5 Months,Site 3,Plot 6,Yes,G,3.5
+5 Months,Site 3,Plot 6,Yes,G,4
+5 Months,Site 3,Plot 2,Yes,M,Dead
+5 Months,Site 3,Plot 2,Yes,M,Dead
+5 Months,Site 3,Plot 2,Yes,M,3.5
+5 Months,Site 3,Plot 2,Yes,M,1.5
+5 Months,Site 3,Plot 2,Yes,M,Dead
+5 Months,Site 3,Plot 4,Yes,M,1
+5 Months,Site 3,Plot 4,Yes,M,7.5
+5 Months,Site 3,Plot 4,Yes,M,Dead
+5 Months,Site 3,Plot 4,Yes,M,Dead
+5 Months,Site 3,Plot 4,Yes,M,5
+5 Months,Site 3,Plot 6,Yes,M,5
+5 Months,Site 3,Plot 6,Yes,M,Dead
+5 Months,Site 3,Plot 6,Yes,M,Dead
+5 Months,Site 3,Plot 6,Yes,M,3.5
+5 Months,Site 3,Plot 6,Yes,M,Dead

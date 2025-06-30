@@ -1,0 +1,25 @@
+"Species","Polymer","Year","Site","Total_Plants","Dead_Plants","Proportion_Dead"
+"G","No","5 Months","Site 1",15,1,0.0666666666666667
+"G","No","5 Months","Site 2",15,0,0
+"G","No","5 Months","Site 3",15,0,0
+"G","No","11 Months","Site 1",15,3,0.2
+"G","No","11 Months","Site 2",15,4,0.266666666666667
+"G","No","11 Months","Site 3",15,5,0.333333333333333
+"G","Yes","5 Months","Site 1",15,1,0.0666666666666667
+"G","Yes","5 Months","Site 2",15,0,0
+"G","Yes","5 Months","Site 3",15,0,0
+"G","Yes","11 Months","Site 1",15,3,0.2
+"G","Yes","11 Months","Site 2",15,6,0.4
+"G","Yes","11 Months","Site 3",15,2,0.133333333333333
+"M","No","5 Months","Site 1",15,6,0.4
+"M","No","5 Months","Site 2",15,9,0.6
+"M","No","5 Months","Site 3",15,7,0.466666666666667
+"M","No","11 Months","Site 1",15,10,0.666666666666667
+"M","No","11 Months","Site 2",15,11,0.733333333333333
+"M","No","11 Months","Site 3",15,9,0.6
+"M","Yes","5 Months","Site 1",15,9,0.6
+"M","Yes","5 Months","Site 2",15,10,0.666666666666667
+"M","Yes","5 Months","Site 3",15,8,0.533333333333333
+"M","Yes","11 Months","Site 1",15,14,0.933333333333333
+"M","Yes","11 Months","Site 2",15,12,0.8
+"M","Yes","11 Months","Site 3",15,8,0.533333333333333

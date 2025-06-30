@@ -1,34 +1,120 @@
+################################################################################
+################################################################################
+#########################      Polymer Study      ##############################
+#########################  Field - Mortality Data ##############################
+#########################  University of Florida  ##############################
+#########################     Gage LaPierre       ##############################
+#########################      2022 - 2025        ##############################
+################################################################################
+################################################################################
+
 #########################     Installs Packages   ##############################
-list.of.packages <- c("tidyverse", "car", "gridextra", "rstatix", "emmeans",
-                      "afex", "lmerTest", "lme4")
+list.of.packages <- c("tidyverse", "car", "gridExtra", "rstatix", "emmeans",
+                      "afex", "lmerTest", "lme4", "broom")
 new.packages <- list.of.packages[!(list.of.packages %in% 
                                      installed.packages()[,"Package"])]
 if(length(new.packages)) install.packages(new.packages)
 
 library(tidyverse)
 library(rstatix) 
+library(gridExtra)
 library(lme4)    
 library(lmerTest) 
 library(afex)    
 library(emmeans) 
+library(broom)
 
 # Load the dataset
 data <- read.csv("Data/Polymer Study - Field Data.csv")
 
 # Convert categorical variables
+# Explicitly setting the order of Year factor levels
 data$Species <- as.factor(data$Species)
 data$Polymer <- as.factor(data$Polymer)
-data$Year <- as.factor(data$Year)
+data$Year <- factor(data$Year, levels = c("0", "5 Months", "11 Months")) # Set desired order
+data$Site <- as.factor(data$Site)
+data$Plot <- as.factor(data$Plot)
 
 # Replace 'Dead' with NA in 'Height' and create a 'Dead' indicator
 data$Dead <- ifelse(data$Height == "Dead", 1, 0)
 data$Height[data$Height == "Dead"] <- NA
 data$Height <- as.numeric(data$Height)
 
+# --- Data Consistency Checks ---
+
+print("\n--- Performing Data Consistency Checks ---")
+
+# 1. Check for entirely duplicate rows
+num_duplicates <- sum(duplicated(data))
+if (num_duplicates > 0) {
+  print(paste("Found", num_duplicates, "duplicate rows."))
+  print(data[duplicated(data), ]) # This will show the duplicate rows
+} else {
+  print("No duplicate rows found.")
+}
+
+# 2. Check sample counts per Site, Plot, Year, Species, Polymer
+# Expected: 5 plants per Plot, Year, Species, Polymer combination
+samples_per_group <- data %>%
+  group_by(Site, Plot, Year, Species, Polymer) %>%
+  summarise(Count = n(), .groups = "drop")
+print("\nCounts per Site, Plot, Year, Species, Polymer:")
+print(samples_per_group)
+
+# Identify if any counts are not 5
+deviating_species_polymer <- samples_per_group %>%
+  filter(Count != 5)
+if (nrow(deviating_species_polymer) > 0) {
+  print("\nDeviations from expected 5 plants per Site, Plot, Year, Species, Polymer:")
+  print(deviating_species_polymer)
+} else {
+  print("\nAll counts are 5 plants per Site, Plot, Year, Species, Polymer (assuming no plants were dead at Year 0).")
+}
+
+# 3. Check total counts per Site, Plot, Year (across both species)
+# Expected: 10 plants per Plot, Year (5 Milkweed + 5 Lovegrass)
+samples_per_plot_year <- data %>%
+  group_by(Site, Plot, Year, Polymer) %>%
+  summarise(Total_Plot_Count = n(), .groups = "drop")
+print("\nTotal counts per Site, Plot, Year, Polymer (across both species):")
+print(samples_per_plot_year)
+
+# Identify if any total plot counts are not 10
+deviating_plot_year <- samples_per_plot_year %>%
+  filter(Total_Plot_Count != 10)
+if (nrow(deviating_plot_year) > 0) {
+  print("\nDeviations from expected 10 plants per Site, Plot, Year, Polymer:")
+  print(deviating_plot_year)
+} else {
+  print("\nAll total counts are 10 plants per Site, Plot, Year, Polymer.")
+}
+
+# 4. Check total counts per Site, Year
+# Expected: 60 plants per Site, Year (6 plots * 10 plants/plot)
+samples_per_site_year <- data %>%
+  group_by(Site, Year, Polymer) %>%
+  summarise(Total_Site_Count = n(), .groups = "drop")
+print("\nTotal counts per Site, Year, Polymer:")
+print(samples_per_site_year)
+
+# Identify if any total site counts are not 60
+deviating_site_year <- samples_per_site_year %>%
+  filter(Total_Site_Count != 60)
+if (nrow(deviating_site_year) > 0) {
+  print("\nDeviations from expected 60 plants per Site, Year, Polymer:")
+  print(deviating_site_year)
+} else {
+  print("\nAll total counts are 60 plants per Site, Year, Polymer.")
+}
+
+print("\n--- Data Consistency Checks Complete ---")
+
+# --- Mortality Analysis ---
+
 # Calculate proportion of dead plants, excluding "0" Year
 dead_proportion <- data %>%
   filter(Year != "0") %>%
-  group_by(Species, Polymer, Year) %>%
+  group_by(Species, Polymer, Year, Site) %>%
   summarise(
     Total_Plants = n(),
     Dead_Plants = sum(Dead, na.rm = TRUE),
@@ -38,22 +124,25 @@ dead_proportion <- data %>%
 
 print("Proportion of Dead Plants:")
 print(dead_proportion)
+# Save mortality proportions table
+write.csv(dead_proportion, "mortality_proportions.csv", row.names = FALSE)
+
 
 # Filter out rows where all plants are dead or alive for logistic regression, exclude 0 month
-data_filtered <- data %>%
+data_filtered_mortality <- data %>%
   filter(Year != "0") %>%
-  group_by(Species, Polymer, Year) %>%
+  group_by(Species, Polymer, Year, Site) %>%
   filter(n_distinct(Dead) > 1) %>%
   ungroup()
 
 # Logistic Regression
-logistic_results <- data_filtered %>%
+logistic_results <- data_filtered_mortality %>%
   group_by(Species, Polymer) %>%
   do(model = glm(Dead ~ Year, family = binomial, data = .)) %>%
   summarise(
     Species = first(Species),
     Polymer = first(Polymer),
-    tidy(model),
+    broom::tidy(model),
     .groups = "drop"
   ) %>%
   filter(term != "(Intercept)") %>%
@@ -62,34 +151,39 @@ logistic_results <- data_filtered %>%
     Odds_Ratio = exp(estimate)
   )
 
-print("\nLogistic Regression Results:")
+print("\n--- Mortality Analysis: Logistic Regression Results (Effect of Year on Mortality) ---")
 print(logistic_results)
+# Save logistic regression results table
+write.csv(logistic_results, "mortality_logistic_regression_results.csv", row.names = FALSE)
 
-# Combine data for plotting
-plot_data <- dead_proportion %>%
+
+# Plotting Mortality
+plot_data_mortality <- dead_proportion %>%
   left_join(logistic_results, by = c("Species" = "Species", "Polymer" = "Polymer"))
 
-# Create the plot
-ggplot(plot_data, aes(x = interaction(Year, Species), y = Proportion_Dead, 
-                      fill = Polymer)) + # changed x axis and fill
+ggplot(plot_data_mortality, aes(x = interaction(Year, Species), y = Proportion_Dead,
+                                fill = Polymer)) +
   geom_bar(stat = "identity", position = "dodge") +
-  scale_fill_manual(values = c("lightblue", "#FFA07A")) + # colors by polymer
+  scale_fill_manual(values = c("lightblue", "#FFA07A")) +
   theme_classic() +
   labs(
-    x = "Year - Species", # changed x axis label
-    y = "Proportion Dead"
+    x = "Year - Species",
+    y = "Proportion Dead",
+    title = "Proportion of Dead Plants by Species, Polymer, and Year"
   ) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
   ylim(0, 1) +
   geom_text(
-    aes(label = Sig, y = Proportion_Dead + 0.05),
+    aes(label = Sig, y = Proportion_Dead + 0.05), # Significance stars are plotted here
     position = position_dodge(width = 0.9),
     vjust = 0
-  )
+  ) +
+  facet_wrap(~ Site)
 
-## Growth Height ##
+# --- Growth Height Analysis (Including Year 0) ---
+
 data_height_all_years <- data %>%
-  filter(!is.na(Height)) # Exclude rows where Height is NA (dead plants)
+  filter(!is.na(Height))
 
 print("\n--- Growth Height Analysis (Including Year 0) ---")
 
@@ -105,49 +199,54 @@ height_summary_all_years <- data_height_all_years %>%
 
 print("\nMean and Standard Deviation of Plant Heights (Including Year 0):")
 print(height_summary_all_years)
+# Save height summary table
+write.csv(height_summary_all_years, "height_descriptive_statistics.csv", row.names = FALSE)
 
 
 # 2. Linear Mixed-Effects Model for Height (Now with Year 0 as a baseline in factor 'Year')
-# Model: Height ~ Polymer * Species * Year + (1|Site) + (1|Plot_ID)
-# 'Year' is treated as a factor. The intercept will represent the mean height at 'Year 0'
-# for the reference levels of Polymer and Species. Coefficients for other Year levels
-# will represent the change in height from 'Year 0'.
-
-# Ensure that the combination of Site and Plot uniquely identifies a plot
 data_height_all_years$Plot_ID <- interaction(data_height_all_years$Site, data_height_all_years$Plot, drop = TRUE)
-
-# Set "0" as the reference level for Year, so comparisons are relative to baseline height.
-data_height_all_years$Year <- relevel(data_height_all_years$Year, ref = "0")
+# Removed relevel as factor levels are now set globally
+# data_height_all_years$Year <- relevel(data_height_all_years$Year, ref = "0")
 
 tryCatch({
   model_height_lmer_all_years <- lmer(Height ~ Polymer * Species * Year + (1|Site) + (1|Plot_ID),
                                       data = data_height_all_years, REML = TRUE)
-  print("\nLinear Mixed-Effects Model Summary for Height (Including Year 0):")
-  print(summary(model_height_lmer_all_years))
+  print("\n--- Growth Height Analysis: Linear Mixed-Effects Model Summary (Including Year 0) ---")
+  model_summary <- summary(model_height_lmer_all_years)
+  print(model_summary)
+  # Save mixed-effects model summary (fixed effects part)
+  write.csv(as.data.frame(model_summary$coefficients), "height_lmer_fixed_effects_summary.csv", row.names = TRUE)
   
-  # Perform ANOVA-like tests on the mixed model to get p-values for fixed effects
-  print("\nANOVA Table for Fixed Effects (Height Model, Including Year 0):")
-  print(anova(model_height_lmer_all_years))
   
-  # Post-hoc tests for significant interactions or main effects
-  # The interpretations of emmeans will now be relative to the Year 0 baseline or differences from it.
-  print("\nPost-hoc tests (example: Polymer effect within Species and Year, including Year 0):")
-  emmeans_interaction_all_years <- emmeans(model_height_lmer_all_years, ~ Polymer | Species * Year)
-  print(pairs(emmeans_interaction_all_years, adjust = "bonferroni"))
+  print("\n--- Growth Height Analysis: ANOVA Table for Fixed Effects (Including Year 0) ---")
+  # This table directly shows the p-values for main effects and interactions.
+  anova_table <- anova(model_height_lmer_all_years)
+  print(anova_table)
+  # Save ANOVA table
+  write.csv(as.data.frame(anova_table), "height_lmer_anova_table.csv", row.names = TRUE)
   
-  print("\nPost-hoc tests (example: Year effect within Species and Polymer, showing changes from Year 0):")
-  emmeans_year_all_years <- emmeans(model_height_lmer_all_years, ~ Year | Species * Polymer)
-  # Contrast "pairwise" directly compares all levels. To see change from Year 0:
-  print(pairs(emmeans_year_all_years, adjust = "bonferroni"))
+  
+  print("\n--- Growth Height Analysis: Post-hoc tests (Polymer effect within Species and Year) ---")
+  emmeans_polymer_effect <- emmeans(model_height_lmer_all_years, ~ Polymer | Species * Year)
+  polymer_contrasts <- pairs(emmeans_polymer_effect, adjust = "bonferroni")
+  print(polymer_contrasts)
+  # Save polymer post-hoc contrasts
+  write.csv(as.data.frame(polymer_contrasts), "height_lmer_polymer_posthoc.csv", row.names = FALSE)
+  
+  
+  print("\n--- Growth Height Analysis: Post-hoc tests (Year effect within Species and Polymer) ---")
+  emmeans_year_effect <- emmeans(model_height_lmer_all_years, ~ Year | Species * Polymer)
+  year_contrasts <- pairs(emmeans_year_effect, adjust = "bonferroni")
+  print(year_contrasts)
+  # Save year post-hoc contrasts
+  write.csv(as.data.frame(year_contrasts), "height_lmer_year_posthoc.csv", row.names = FALSE)
   
 }, error = function(e) {
   message("Could not fit mixed-effects model with all years. Error: ", e$message)
   message("This might happen if there's insufficient variance within random effects groups or if 'Plot_ID' is not granular enough relative to observations.")
 })
 
-
 # 3. Visualization of Growth Heights (Now includes Year 0)
-# Plot mean height over years, faceted by site
 ggplot(height_summary_all_years, aes(x = Year, y = Mean_Height, color = Polymer, linetype = Species, group = interaction(Polymer, Species))) +
   geom_line(linewidth = 1) +
   geom_point(aes(shape = Species), size = 3) +
@@ -167,7 +266,6 @@ ggplot(height_summary_all_years, aes(x = Year, y = Mean_Height, color = Polymer,
   ) +
   facet_wrap(~ Site, scales = "free_y")
 
-# Boxplot to visualize distribution of heights at each measurement point (Now includes Year 0)
 ggplot(data_height_all_years, aes(x = Year, y = Height, fill = Polymer)) +
   geom_boxplot(position = position_dodge(0.8)) +
   scale_fill_manual(values = c("No" = "lightblue", "Yes" = "#FFA07A")) +
@@ -180,5 +278,5 @@ ggplot(data_height_all_years, aes(x = Year, y = Height, fill = Polymer)) +
   ) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
-
 print("\nAnalysis complete. Check the generated plots for visual insights.")
+
