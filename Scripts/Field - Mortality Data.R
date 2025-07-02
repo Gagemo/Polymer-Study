@@ -10,7 +10,7 @@
 
 #########################     Installs Packages   ##############################
 list.of.packages <- c("tidyverse", "car", "gridExtra", "rstatix", "emmeans",
-                      "afex", "lmerTest", "lme4", "broom")
+                      "afex", "lmerTest", "lme4", "broom", "ggpattern")
 new.packages <- list.of.packages[!(list.of.packages %in% 
                                      installed.packages()[,"Package"])]
 if(length(new.packages)) install.packages(new.packages)
@@ -23,6 +23,7 @@ library(lmerTest)
 library(afex)    
 library(emmeans) 
 library(broom)
+library(ggpattern)
 
 # Load the dataset
 data <- read.csv("Data/Polymer Study - Field Data.csv")
@@ -125,12 +126,14 @@ dead_proportion <- data %>%
 print("Proportion of Dead Plants:")
 print(dead_proportion)
 # Save mortality proportions table
-write.csv(dead_proportion, "mortality_proportions.csv", row.names = FALSE)
+write.csv(dead_proportion, "Tables/mortality_proportions.csv", row.names = FALSE)
 
 
 # Filter out rows where all plants are dead or alive for logistic regression, exclude 0 month
 data_filtered_mortality <- data %>%
   filter(Year != "0") %>%
+  # Add this line to explicitly set "5 Months" as the reference level for 'Year'
+  mutate(Year = relevel(Year, ref = "5 Months")) %>%
   group_by(Species, Polymer, Year, Site) %>%
   filter(n_distinct(Dead) > 1) %>%
   ungroup()
@@ -154,34 +157,46 @@ logistic_results <- data_filtered_mortality %>%
 print("\n--- Mortality Analysis: Logistic Regression Results (Effect of Year on Mortality) ---")
 print(logistic_results)
 # Save logistic regression results table
-write.csv(logistic_results, "mortality_logistic_regression_results.csv", row.names = FALSE)
-
+write.csv(logistic_results, "Tables/mortality_logistic_regression_results.csv", row.names = FALSE)
 
 # Plotting Mortality
 plot_data_mortality <- dead_proportion %>%
   left_join(logistic_results, by = c("Species" = "Species", "Polymer" = "Polymer"))
 
-ggplot(plot_data_mortality, aes(x = interaction(Year, Species), y = Proportion_Dead,
-                                fill = Polymer)) +
-  geom_bar(stat = "identity", position = "dodge") +
-  scale_fill_manual(values = c("lightblue", "#FFA07A")) +
-  theme_classic() +
+ggplot(plot_data_mortality, aes(x = Year, y = Proportion_Dead, fill = Polymer, group = interaction(Polymer, Species), pattern = Species)) +
+  geom_bar_pattern(stat = "identity", position = position_dodge(width = 1), linewidth = 0.5,
+                   color = "black", # Bar outlines are black
+                   pattern_fill = "white", # Pattern fill is transparent
+                   pattern_color = "black", # Pattern lines are black
+                   pattern_density = 0.4,
+                   pattern_spacing = 0.05) + # Slightly increased spacing for visibility
+  scale_fill_manual(values = c("lightblue", "#FFA07A"),
+                    labels = c("No" = "Control", "Yes" = "Hydrogel")) + # Changed labels here
+  scale_pattern_manual(values = c("G" = "none", "M" = "stripe"),
+                       labels = c("G" = "Lovegrass", "M" = "Milkweed")) +
+  theme_classic(base_size = 14) + # Increased base font size by 2 (default is often 12)
   labs(
-    x = "Year - Species",
-    y = "Proportion Dead",
-    title = "Proportion of Dead Plants by Species, Polymer, and Year"
+    x = NULL, # Removed x-axis title
+    y = "Proportion dead", # Changed y-axis label to lowercase 'dead'
+    title = NULL, # Removed figure title
+    fill = "Treatment"
+    # Removed pattern = "Species" from labs to remove its legend title
   ) +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  theme(axis.text.x = element_text(angle = 0, hjust = 0.5)) + # Changed angle to 0 and hjust to 0.5 for horizontal
   ylim(0, 1) +
   geom_text(
-    aes(label = Sig, y = Proportion_Dead + 0.05), # Significance stars are plotted here
-    position = position_dodge(width = 0.9),
-    vjust = 0
+    aes(label = Sig, y = Proportion_Dead + 0.05),
+    position = position_dodge(width = 0.1),
+    vjust = 0,
+    size = 4 # Adjust text size for significance labels if needed, default is 3.88
   ) +
-  facet_wrap(~ Site)
+  facet_wrap(~ Site) +
+  guides(fill = guide_legend(override.aes = list(pattern = "none")), # Removes pattern from the fill legend
+         pattern = "none") # Completely removes the pattern legend
+
+ggsave("Figures/Field/Mortality.jpg", dpi = 800)
 
 # --- Growth Height Analysis (Including Year 0) ---
-
 data_height_all_years <- data %>%
   filter(!is.na(Height))
 
@@ -200,7 +215,7 @@ height_summary_all_years <- data_height_all_years %>%
 print("\nMean and Standard Deviation of Plant Heights (Including Year 0):")
 print(height_summary_all_years)
 # Save height summary table
-write.csv(height_summary_all_years, "height_descriptive_statistics.csv", row.names = FALSE)
+write.csv(height_summary_all_years, "Tables/height_descriptive_statistics.csv", row.names = FALSE)
 
 
 # 2. Linear Mixed-Effects Model for Height (Now with Year 0 as a baseline in factor 'Year')
@@ -215,7 +230,7 @@ tryCatch({
   model_summary <- summary(model_height_lmer_all_years)
   print(model_summary)
   # Save mixed-effects model summary (fixed effects part)
-  write.csv(as.data.frame(model_summary$coefficients), "height_lmer_fixed_effects_summary.csv", row.names = TRUE)
+  write.csv(as.data.frame(model_summary$coefficients), "Tables/height_lmer_fixed_effects_summary.csv", row.names = TRUE)
   
   
   print("\n--- Growth Height Analysis: ANOVA Table for Fixed Effects (Including Year 0) ---")
@@ -223,7 +238,7 @@ tryCatch({
   anova_table <- anova(model_height_lmer_all_years)
   print(anova_table)
   # Save ANOVA table
-  write.csv(as.data.frame(anova_table), "height_lmer_anova_table.csv", row.names = TRUE)
+  write.csv(as.data.frame(anova_table), "Tables/height_lmer_anova_table.csv", row.names = TRUE)
   
   
   print("\n--- Growth Height Analysis: Post-hoc tests (Polymer effect within Species and Year) ---")
@@ -231,7 +246,7 @@ tryCatch({
   polymer_contrasts <- pairs(emmeans_polymer_effect, adjust = "bonferroni")
   print(polymer_contrasts)
   # Save polymer post-hoc contrasts
-  write.csv(as.data.frame(polymer_contrasts), "height_lmer_polymer_posthoc.csv", row.names = FALSE)
+  write.csv(as.data.frame(polymer_contrasts), "Tables/height_lmer_polymer_posthoc.csv", row.names = FALSE)
   
   
   print("\n--- Growth Height Analysis: Post-hoc tests (Year effect within Species and Polymer) ---")
@@ -239,7 +254,7 @@ tryCatch({
   year_contrasts <- pairs(emmeans_year_effect, adjust = "bonferroni")
   print(year_contrasts)
   # Save year post-hoc contrasts
-  write.csv(as.data.frame(year_contrasts), "height_lmer_year_posthoc.csv", row.names = FALSE)
+  write.csv(as.data.frame(year_contrasts), "Tables/height_lmer_year_posthoc.csv", row.names = FALSE)
   
 }, error = function(e) {
   message("Could not fit mixed-effects model with all years. Error: ", e$message)
@@ -266,17 +281,35 @@ ggplot(height_summary_all_years, aes(x = Year, y = Mean_Height, color = Polymer,
   ) +
   facet_wrap(~ Site, scales = "free_y")
 
-ggplot(data_height_all_years, aes(x = Year, y = Height, fill = Polymer)) +
-  geom_boxplot(position = position_dodge(0.8)) +
-  scale_fill_manual(values = c("No" = "lightblue", "Yes" = "#FFA07A")) +
-  facet_grid(Species ~ Site, scales = "free_y") +
-  theme_classic() +
+ggsave("Figures/Field/FieldHeight.jpg")
+
+ggplot(data_height_all_years, aes(x = Year, y = Height, fill = Polymer, 
+                                  group = interaction(Polymer, Species), 
+                                  pattern = Species)) +
+  geom_boxplot_pattern(linewidth = 0.5, color = "black", # Bar outlines are black
+                   pattern_fill = "white", # Pattern fill is transparent
+                   pattern_color = "black", # Pattern lines are black
+                   pattern_density = 0.4,
+                   pattern_spacing = 0.05) + # Slightly increased spacing for visibility
+  scale_fill_manual(values = c("lightblue", "#FFA07A"),
+                    labels = c("No" = "Control", "Yes" = "Hydrogel")) + # Changed labels here
+  scale_pattern_manual(values = c("G" = "none", "M" = "stripe"),
+                       labels = c("G" = "Lovegrass", "M" = "Milkweed")) +
+  theme_classic(base_size = 14) + # Increased base font size by 2 (default is often 12)
   labs(
-    x = "Year",
-    y = "Height (cm)",
-    title = "Distribution of Plant Heights by Species, Polymer, Year, and Site (Including Year 0)"
+    x = NULL, # Removed x-axis title
+    y = "Height", # Changed y-axis label to lowercase 'dead'
+    title = NULL, # Removed figure title
+    fill = "Treatment"
+    # Removed pattern = "Species" from labs to remove its legend title
   ) +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+  theme(axis.text.x = element_text(angle = 0, hjust = 0.5)) + # Changed angle to 0 and hjust to 0.5 for horizontal
+  facet_wrap(~ Site) +
+  guides(fill = guide_legend(override.aes = list(pattern = "none")), # Removes pattern from the fill legend
+         pattern = "none") # Completely removes the pattern legend
+
+
+ggsave("Figures/Field/HeightAllYears.jpg", dpi = 600)
 
 print("\nAnalysis complete. Check the generated plots for visual insights.")
 
