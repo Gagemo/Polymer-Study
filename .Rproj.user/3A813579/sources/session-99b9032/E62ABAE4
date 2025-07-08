@@ -3,24 +3,24 @@
     "path": "~/GitHub/Polymer-Study/Scripts/Greenhouse - Lovegrass - Weight Data.R",
     "project_path": "Scripts/Greenhouse - Lovegrass - Weight Data.R",
     "type": "r_source",
-    "hash": "0",
+    "hash": "2817154554",
     "contents": "",
-    "dirty": true,
+    "dirty": false,
     "created": 1742576783088.0,
     "source_on_save": false,
     "relative_order": 1,
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "122,0",
-        "scrollLine": "0"
+        "cursorPosition": "169,0",
+        "scrollLine": "67"
     },
     "folds": "",
-    "lastKnownWriteTime": 1743431075,
+    "lastKnownWriteTime": 1752006744,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1743434865741,
+    "last_content_update": 1752006744944,
     "read_only": false,
     "read_only_alternatives": []
 }

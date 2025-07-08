@@ -1,0 +1,6 @@
+"Metric","Test_Used","P_Value","Significance"
+"Plug.Moisture","Kruskal-Wallis",0.809,""
+"Sand.Moisture","Kruskal-Wallis",0.831,""
+"Height","Kruskal-Wallis",0.914,""
+"Leaf.Height","Kruskal-Wallis",0.917,""
+"Height.Difference","Kruskal-Wallis",0.884,""
