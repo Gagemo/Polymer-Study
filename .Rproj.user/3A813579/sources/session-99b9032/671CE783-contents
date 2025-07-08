@@ -1,7 +1,7 @@
 ################################################################################
 ################################################################################
 #########################      Polymer Study      ##############################
-#########################  Field - Mortality Data ##############################
+#################### Field - Mortality & Height Data ###########################
 #########################  University of Florida  ##############################
 #########################     Gage LaPierre       ##############################
 #########################      2022 - 2025        ##############################
@@ -262,10 +262,12 @@ tryCatch({
 })
 
 # 3. Visualization of Growth Heights (Now includes Year 0)
-ggplot(height_summary_all_years, aes(x = Year, y = Mean_Height, color = Polymer, linetype = Species, group = interaction(Polymer, Species))) +
+ggplot(height_summary_all_years, aes(x = Year, y = Mean_Height, color = Polymer, 
+                                     linetype = Species, 
+                                     group = interaction(Polymer, Species))) +
   geom_line(linewidth = 1) +
   geom_point(aes(shape = Species), size = 3) +
-  scale_color_manual(values = c("No" = "darkgreen", "Yes" = "darkorange")) +
+  scale_color_manual(values = c("No" = "lightblue", "Yes" = "salmon")) +
   theme_minimal() +
   labs(
     x = "Year",
@@ -284,7 +286,6 @@ ggplot(height_summary_all_years, aes(x = Year, y = Mean_Height, color = Polymer,
 ggsave("Figures/Field/FieldHeight.jpg")
 
 ggplot(data_height_all_years, aes(x = Year, y = Height, fill = Polymer, 
-                                  group = interaction(Polymer, Species), 
                                   pattern = Species)) +
   geom_boxplot_pattern(linewidth = 0.5, color = "black", # Bar outlines are black
                    pattern_fill = "white", # Pattern fill is transparent
@@ -298,7 +299,7 @@ ggplot(data_height_all_years, aes(x = Year, y = Height, fill = Polymer,
   theme_classic(base_size = 14) + # Increased base font size by 2 (default is often 12)
   labs(
     x = NULL, # Removed x-axis title
-    y = "Height", # Changed y-axis label to lowercase 'dead'
+    y = "Height (cm)", # Changed y-axis label to lowercase 'dead'
     title = NULL, # Removed figure title
     fill = "Treatment"
     # Removed pattern = "Species" from labs to remove its legend title
