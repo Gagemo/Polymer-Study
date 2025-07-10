@@ -162,9 +162,8 @@ do.call(grid.arrange, c(boxplots_ordered))
 combined_plot <- do.call(grid.arrange, c(boxplots_ordered, ncol=n_cols)) # Use the ordered list
 
 # Save the combined plot as a high-quality PNG
-ggsave(
+ggsave(combined_plot,
   filename = "Figures/Greenhouse/combined_greenhouse_biomass_boxplots.png",
-  plot = combined_plot,
   width = 10, # Adjusted width for 2 columns
   height = 14, # Adjusted height for 4 rows
   dpi = 300,
