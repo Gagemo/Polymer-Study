@@ -13,7 +13,7 @@ rm(list=ls(all=TRUE))
 cat("\014")
 
 #########################     Installs Packages    ##############################
-list.of.packages <- c("tidyverse", "car", "gridExtra")
+list.of.packages <- c("tidyverse", "car", "gridExtra", "rstatix") # Added rstatix for easy post-hoc
 new.packages <- list.of.packages[!(list.of.packages %in%
                                      installed.packages()[,"Package"])]
 if(length(new.packages)) install.packages(new.packages)
@@ -21,11 +21,10 @@ if(length(new.packages)) install.packages(new.packages)
 # Load required libraries
 library(tidyverse)
 library(car)
-library(gridExtra) # Make sure gridExtra is loaded for grid.arrange
+library(gridExtra)
+library(rstatix) # Load rstatix
 
 # Load the dataset
-# Assuming 'Polymer Study - Lovegrass Weight.csv' is accessible
-# If running in a local R environment, adjust path: data <- read.csv("Data/Polymer Study - Lovegrass Weight.csv")
 data <- read.csv("Data/Polymer Study - Lovegrass Weight.csv")
 
 # Convert categorical variables
@@ -51,18 +50,23 @@ shapiro_results <- list(
 )
 print(shapiro_results)
 
-# Determine test based on normality
+# Determine test based on normality and store results
 anova_results <- list()
 test_type <- list()
+# Store models for post-hoc analysis
+models <- list()
+
 for (metric in names(shapiro_results)) {
   if (shapiro_results[[metric]] > 0.05) {
     model <- aov(as.formula(paste(metric, "~ Treatment")), data = data)
     anova_results[[metric]] <- summary(model)[[1]][["Pr(>F)"]][1]
     test_type[[metric]] <- "ANOVA"
+    models[[metric]] <- model # Store ANOVA model
   } else {
     model <- kruskal.test(as.formula(paste(metric, "~ Treatment")), data = data)
     anova_results[[metric]] <- model$p.value
     test_type[[metric]] <- "Kruskal-Wallis"
+    models[[metric]] <- model # Store Kruskal-Wallis result (not a model object for post-hoc in the same way)
   }
 }
 print(anova_results)
@@ -72,8 +76,8 @@ y_labels <- c(
   "Total.Weight" = "Total biomass (g)",
   "Root.Weight" = "Root biomass (g)",
   "Shoot.Weight" = "Shoot biomass (g)",
-  "Lost.Weight" = "Lost biomass (g)",
-  "Lost.Weight.." = "Lost biomass (%)",
+  "Lost.Weight" = "Shoot biomass loss (g)",
+  "Lost.Weight.." = "Shoot biomass loss ratio (%)",
   "Root.." = "Root mass ratio (%)",
   "Shoot.." = "Shoot mass ratio (%)"
 )
@@ -129,7 +133,7 @@ boxplots_ordered <- all_boxplots_named[desired_order_metrics]
 
 # --- MODIFICATION: Control x-axis labels for combined plot ---
 n_plots <- length(boxplots_ordered) # Use the length of the ordered list
-n_cols <- 2 # Desired number of columns
+n_cols <- 3 # Desired number of columns
 n_rows <- ceiling(n_plots / n_cols)
 
 # Identify plots that should keep their x-axis labels (bottom row of each column)
@@ -161,9 +165,96 @@ combined_plot <- do.call(grid.arrange, c(boxplots_ordered, ncol=n_cols)) # Use t
 ggsave(
   filename = "Figures/Greenhouse/combined_greenhouse_biomass_boxplots.png",
   plot = combined_plot,
-  width = 12, # Adjusted width for 2 columns
-  height = 18, # Adjusted height for 4 rows
-  dpi = 600,
+  width = 10, # Adjusted width for 2 columns
+  height = 14, # Adjusted height for 4 rows
+  dpi = 300,
   bg = "white" # Set background to white for the combined figure
 )
 print("\nAll greenhouse biomass boxplots combined and saved to 'Figures/Greenhouse/combined_greenhouse_biomass_boxplots.png'")
+
+# --- NEW: Summary of all ANOVA/Kruskal Tests ---
+print("\n--- Summary of Greenhouse Statistical Test Results (ANOVA/Kruskal-Wallis) ---")
+summary_table_greenhouse <- tibble(
+  Metric = names(anova_results),
+  Test_Used = unlist(test_type),
+  P_Value = unlist(anova_results)
+) %>%
+  mutate(
+    P_Value = round(P_Value, 3), # Round p-values for display
+    Significance = ifelse(P_Value < 0.05, "*", "") # Add a significance indicator
+  )
+print(summary_table_greenhouse)
+write.csv(summary_table_greenhouse, "greenhouse_statistical_summary.csv", row.names = FALSE)
+print("Summary table saved to 'greenhouse_statistical_summary.csv'")
+
+# --- NEW: Post-hoc Tests ---
+print("\n--- Greenhouse Post-hoc Test Results ---")
+post_hoc_results <- list()
+
+for (metric in names(anova_results)) {
+  # Post-hoc tests are typically only meaningful for tests with p < 0.05
+  if (anova_results[[metric]] < 0.05) {
+    if (test_type[[metric]] == "ANOVA") {
+      # For ANOVA, perform pairwise t-test
+      pairwise_test <- data %>%
+        pairwise_t_test(as.formula(paste(metric, "~ Treatment")), p.adjust.method = "bonferroni")
+      post_hoc_results[[metric]] <- pairwise_test
+      print(paste0("Post-hoc for ", metric, " (ANOVA - Difference in Means):"))
+      # Explicitly select and print key columns for clarity
+      print(pairwise_test %>% select(group1, group2, estimate, p.adj))
+    } else if (test_type[[metric]] == "Kruskal-Wallis") {
+      # For Kruskal-Wallis, use wilcox.test from base R to get Hodges-Lehmann estimate and CI
+      # and pairwise_wilcox_test from rstatix for adjusted p-value.
+      
+      # Perform Wilcoxon rank sum test to get Hodges-Lehmann estimate and CI
+      # Ensure data is filtered for the current metric and groups
+      group_data <- data %>% select(Treatment, !!sym(metric)) %>% drop_na()
+      
+      # Assuming 'NP' is control and 'P' is hydrogel applied
+      # Adjust order if 'P' should be subtracted from 'NP'
+      wilcox_base_test <- wilcox.test(
+        x = group_data %>% filter(Treatment == "NP") %>% pull(!!sym(metric)),
+        y = group_data %>% filter(Treatment == "P") %>% pull(!!sym(metric)),
+        conf.int = TRUE,
+        conf.level = 0.95 # You can adjust confidence level if needed
+      )
+      
+      # Get adjusted p-value from rstatix's pairwise_wilcox_test
+      pairwise_rstatix_test <- data %>%
+        pairwise_wilcox_test(as.formula(paste(metric, "~ Treatment")), p.adjust.method = "bonferroni")
+      
+      # Extract relevant info and rename for consistency
+      # Find the row corresponding to the "NP" vs "P" comparison
+      p_adj_value <- pairwise_rstatix_test %>%
+        filter(group1 == "NP" & group2 == "P") %>%
+        pull(p.adj)
+      
+      formatted_result <- tibble(
+        group1 = "NP",
+        group2 = "P",
+        estimate = wilcox_base_test$estimate, # Hodges-Lehmann estimate
+        conf.low = wilcox_base_test$conf.int[1],
+        conf.high = wilcox_base_test$conf.int[2],
+        p.adj = p_adj_value
+      )
+      
+      post_hoc_results[[metric]] <- formatted_result # Store the modified tibble
+      print(paste0("Post-hoc for ", metric, " (Kruskal-Wallis - Hodges-Lehmann Estimate and CI):"))
+      # Explicitly select and print key columns for clarity, now including 'estimate' and CI
+      print(formatted_result %>% select(group1, group2, estimate, conf.low, conf.high, p.adj))
+    }
+  } else {
+    print(paste0("No significant differences for ", metric, " (p = ", round(anova_results[[metric]], 3), "). No post-hoc test performed."))
+  }
+}
+
+# Save post-hoc results if any
+if (length(post_hoc_results) > 0) {
+  # Combine all post-hoc results into a single data frame for saving
+  all_post_hoc_df <- bind_rows(post_hoc_results, .id = "Metric")
+  write.csv(all_post_hoc_df, "greenhouse_post_hoc_summary.csv", row.names = FALSE)
+  print("\nPost-hoc results saved to 'greenhouse_post_hoc_summary.csv'")
+} else {
+  print("\nNo significant results from ANOVA/Kruskal-Wallis, so no post-hoc tests were performed or saved.")
+}
+

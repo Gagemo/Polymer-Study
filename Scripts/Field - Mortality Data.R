@@ -262,28 +262,40 @@ tryCatch({
 })
 
 # 3. Visualization of Growth Heights (Now includes Year 0)
-ggplot(height_summary_all_years, aes(x = Year, y = Mean_Height, color = Polymer, 
-                                     linetype = Species, 
+ggplot(height_summary_all_years, aes(x = Year, y = Mean_Height, color = Polymer,
+                                     linetype = Species,
                                      group = interaction(Polymer, Species))) +
-  geom_line(linewidth = 1) +
+  # Draw a slightly thicker black line first for the outline effect
+  geom_line(linewidth = 1.5) + # Original colored line on top
   geom_point(aes(shape = Species), size = 3) +
-  scale_color_manual(values = c("No" = "lightblue", "Yes" = "salmon")) +
-  theme_minimal() +
+  scale_color_manual(values = c("No" = "#33CCCC", "Yes" = "darkorange"),
+                     labels = c("No" = "Control", "Yes" = "Hydrogel")) +
+  theme_minimal(base_size = 18) +
   labs(
-    x = "Year",
-    y = "Mean Height (cm)",
-    title = "Mean Plant Height Over Time by Polymer, Species, and Site (Including Year 0)",
-    color = "Polymer Treatment",
-    linetype = "Species",
-    shape = "Species"
+    x = "",
+    y = "Mean height (cm)",
+    color = "",
+    linetype = "",
+    shape = ""
   ) +
   theme(
     legend.position = "bottom",
-    axis.text.x = element_text(angle = 45, hjust = 1)
+    axis.text.x = element_text(size = 18),
+    axis.text.y = element_text(size = 18),
+    axis.title.x = element_text(size = 20),
+    axis.title.y = element_text(size = 20),
+    legend.text = element_text(size = 18),
+    legend.title = element_text(size = 18),
+    strip.text = element_text(size = 18),
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor.x = element_blank(),
+    panel.grid.major.y = element_line(color = "darkgrey"),
+    panel.grid.minor.y = element_line(color = "darkgrey")
   ) +
-  facet_wrap(~ Site, scales = "free_y")
+  facet_wrap(~ Site)
 
-ggsave("Figures/Field/FieldHeight.jpg")
+
+ggsave("Figures/Field/FieldHeight.jpg", width = 14, height = 8, dpi = 600)
 
 ggplot(data_height_all_years, aes(x = Year, y = Height, fill = Polymer, 
                                   pattern = Species)) +
@@ -299,9 +311,9 @@ ggplot(data_height_all_years, aes(x = Year, y = Height, fill = Polymer,
   theme_classic(base_size = 14) + # Increased base font size by 2 (default is often 12)
   labs(
     x = NULL, # Removed x-axis title
-    y = "Height (cm)", # Changed y-axis label to lowercase 'dead'
+    y = "Mean height (cm)", # Changed y-axis label to lowercase 'dead'
     title = NULL, # Removed figure title
-    fill = "Treatment"
+    fill = ""
     # Removed pattern = "Species" from labs to remove its legend title
   ) +
   theme(axis.text.x = element_text(angle = 0, hjust = 0.5)) + # Changed angle to 0 and hjust to 0.5 for horizontal

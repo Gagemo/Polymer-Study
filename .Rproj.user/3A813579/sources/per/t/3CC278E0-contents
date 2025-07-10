@@ -1,10 +1,10 @@
 ################################################################################
 ################################################################################
-#########################     Polymer Study      ##############################
+#########################     Hydrogel Study      ##############################
 ######### Greenhouse - Lovegrass - Moisture & Height Data ######################
-#########################   University of Florida   ##############################
-#########################     Gage LaPierre      ##############################
-#########################     2022 - 2025        ##############################
+#########################   University of Florida   ############################
+#########################     Gage LaPierre      ###############################
+#########################     2022 - 2025        ###############################
 ################################################################################
 ################################################################################
 
@@ -107,7 +107,7 @@ boxplots <- lapply(names(anova_results), function(metric) {
 
 # --- MODIFICATION: Control x-axis labels for combined plot ---
 n_plots <- length(boxplots)
-n_cols <- 2 # Desired number of columns
+n_cols <- 3 # Desired number of columns
 n_rows <- ceiling(n_plots / n_cols)
 
 # Identify plots that should keep their x-axis labels (bottom row of each column)
@@ -139,9 +139,9 @@ combined_plot <- do.call(grid.arrange, c(boxplots, ncol=n_cols))
 ggsave(
   filename = "Figures/Greenhouse/combined_greenhouse_boxplots.png",
   plot = combined_plot,
-  width = 10, # Adjust width as needed based on ncol and number of plots
-  height = 14, # Adjust height as needed
-  dpi = 300,
+  width = 15, # Adjust width as needed based on ncol and number of plots
+  height = 11, # Adjust height as needed
+  dpi = 600,
   bg = "white" # Set background to white for the combined figure
 )
 print("\nAll greenhouse boxplots combined and saved to 'Figures/Greenhouse/combined_greenhouse_boxplots.png'")
